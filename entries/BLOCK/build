@@ -1,0 +1,13 @@
+#!/bin/tcsh
+
+foreach x ( *.c )
+gcc -O3 -Wall -c -DBLOCK_SIZE=4 $x
+end
+
+foreach x ( *.cpp )
+g++ -O3 -Wall -c -DBLOCK_SIZE=4 $x
+end
+
+g++ -o entry *.o
+
+cp entry ..
