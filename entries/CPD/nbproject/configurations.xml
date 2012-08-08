@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="80">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="competition-2012"
+                   displayName="competition-2012"
+                   projectFiles="true">
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <itemPath>src/AbstractCPD.cpp</itemPath>
+        <itemPath>src/AbstractCPD.h</itemPath>
+        <itemPath>src/AbstractGraph.cpp</itemPath>
+        <itemPath>src/AbstractGraph.h</itemPath>
+        <itemPath>src/AbstractGraphEdge.cpp</itemPath>
+        <itemPath>src/AbstractGraphEdge.h</itemPath>
+        <itemPath>src/AbstractGraphNode.cpp</itemPath>
+        <itemPath>src/AbstractGraphNode.h</itemPath>
+        <itemPath>src/AcrosstheCape.map</itemPath>
+        <itemPath>src/AcrosstheCape.map.scen</itemPath>
+        <itemPath>src/CPD2.cpp</itemPath>
+        <itemPath>src/CPD2.h</itemPath>
+        <itemPath>src/CompressedMoveDatabase.cpp</itemPath>
+        <itemPath>src/CompressedMoveDatabase.h</itemPath>
+        <itemPath>src/CompressedTable.cpp</itemPath>
+        <itemPath>src/CompressedTable.h</itemPath>
+        <itemPath>src/DijkstraNode.cpp</itemPath>
+        <itemPath>src/DijkstraNode.h</itemPath>
+        <itemPath>src/Entry.cpp</itemPath>
+        <itemPath>src/Entry.h</itemPath>
+        <itemPath>src/GenericEdge.cpp</itemPath>
+        <itemPath>src/GenericEdge.h</itemPath>
+        <itemPath>src/GenericMap.cpp</itemPath>
+        <itemPath>src/GenericMap.h</itemPath>
+        <itemPath>src/GenericNode.cpp</itemPath>
+        <itemPath>src/GenericNode.h</itemPath>
+        <itemPath>src/GridMap.cpp</itemPath>
+        <itemPath>src/GridMap.h</itemPath>
+        <itemPath>src/MapCpd.cpp</itemPath>
+        <itemPath>src/MapCpd.h</itemPath>
+        <itemPath>src/MoveTable.cpp</itemPath>
+        <itemPath>src/MoveTable.h</itemPath>
+        <itemPath>src/ParamManager.cpp</itemPath>
+        <itemPath>src/ParamManager.h</itemPath>
+        <itemPath>src/QTDatabase.cpp</itemPath>
+        <itemPath>src/QTDatabase.h</itemPath>
+        <itemPath>src/QuadTree.cpp</itemPath>
+        <itemPath>src/QuadTree.h</itemPath>
+        <itemPath>src/ReachabilityTable.cpp</itemPath>
+        <itemPath>src/ReachabilityTable.h</itemPath>
+        <itemPath>src/Rectangle.cpp</itemPath>
+        <itemPath>src/Rectangle.h</itemPath>
+        <itemPath>src/RectangleSplitter.cpp</itemPath>
+        <itemPath>src/RectangleSplitter.h</itemPath>
+        <itemPath>src/Scenario.cpp</itemPath>
+        <itemPath>src/Scenario.h</itemPath>
+        <itemPath>src/ScenarioLoader.cpp</itemPath>
+        <itemPath>src/ScenarioLoader.h</itemPath>
+        <itemPath>src/ScenarioRM.cpp</itemPath>
+        <itemPath>src/ScenarioRM.h</itemPath>
+        <itemPath>src/SlimRectangle.cpp</itemPath>
+        <itemPath>src/SlimRectangle.h</itemPath>
+        <itemPath>src/SlimmerRectangle.cpp</itemPath>
+        <itemPath>src/SlimmerRectangle.h</itemPath>
+        <itemPath>src/SubstringManager.cpp</itemPath>
+        <itemPath>src/SubstringManager.h</itemPath>
+        <itemPath>src/TableCompresser.cpp</itemPath>
+        <itemPath>src/TableCompresser.h</itemPath>
+        <itemPath>src/TableCompresser1.cpp</itemPath>
+        <itemPath>src/TableCompresser1.h</itemPath>
+        <itemPath>src/Tile.cpp</itemPath>
+        <itemPath>src/Tile.h</itemPath>
+        <itemPath>src/Timer.cpp</itemPath>
+        <itemPath>src/Timer.h</itemPath>
+        <itemPath>src/globals.cpp</itemPath>
+        <itemPath>src/globals.h</itemPath>
+        <itemPath>src/main-comp.txt</itemPath>
+        <itemPath>src/main.cpp</itemPath>
+        <itemPath>src/rmtst01.map</itemPath>
+        <itemPath>src/rmtst01.map.scen</itemPath>
+        <itemPath>src/tags</itemPath>
+        <itemPath>src/utils.cpp</itemPath>
+        <itemPath>src/utils.h</itemPath>
+        <itemPath>src/utils2.cpp</itemPath>
+        <itemPath>src/utils2.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="src" displayName="src" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <commandLine>-pthread -pg</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpd-DEBUG-ONLY</output>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release-20m" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>6</developmentMode>
+          <commandLine>-pthread</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpd-comp-20m</output>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release-mbm" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>6</developmentMode>
+          <commandLine>-pthread -D MOVEBYMOVEPATH</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cpd-comp-mbm</output>
+        </linkerTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

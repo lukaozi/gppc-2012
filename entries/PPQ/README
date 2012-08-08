@@ -1,0 +1,7 @@
+To compile the code use "make". There are no other settings to be adjusted.
+
+To run the code:
+./main -[full|pre|run] something.map something.map.scen
+eg.
+./main -full rmtst01.map rmtst01.map.scen
+

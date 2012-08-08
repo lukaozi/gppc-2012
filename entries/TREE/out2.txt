@@ -1,0 +1,2 @@
+g++ -O3 -Wall -o test main.cpp ScenarioLoader.cpp Timer.cpp Entry.cpp
+./test -full rmtst01.map rmtst01.map.scen

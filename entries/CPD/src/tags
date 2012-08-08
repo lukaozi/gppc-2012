@@ -1,0 +1,580 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ABSTRACTCPD_H	AbstractCPD.h	/^#define	ABSTRACTCPD_H$/;"	d
+ABSTRACTGRAPHEDGE_H_	AbstractGraphEdge.h	/^#define ABSTRACTGRAPHEDGE_H_$/;"	d
+ABSTRACTGRAPHNODE_H_	AbstractGraphNode.h	/^#define ABSTRACTGRAPHNODE_H_$/;"	d
+ABSTRACTGRAPH_H_	AbstractGraph.h	/^#define ABSTRACTGRAPH_H_$/;"	d
+AbstractCPD	AbstractCPD.cpp	/^AbstractCPD::AbstractCPD() {$/;"	f	class:AbstractCPD
+AbstractCPD	AbstractCPD.cpp	/^AbstractCPD::AbstractCPD(const AbstractCPD& orig) {$/;"	f	class:AbstractCPD
+AbstractCPD	AbstractCPD.h	/^class AbstractCPD {$/;"	c
+AbstractGraph	AbstractGraph.h	/^class AbstractGraph {$/;"	c
+AbstractGraphEdge	AbstractGraphEdge.cpp	/^AbstractGraphEdge::AbstractGraphEdge() {$/;"	f	class:AbstractGraphEdge
+AbstractGraphEdge	AbstractGraphEdge.h	/^class AbstractGraphEdge {$/;"	c
+AbstractGraphNode	AbstractGraphNode.cpp	/^AbstractGraphNode::AbstractGraphNode() {$/;"	f	class:AbstractGraphNode
+AbstractGraphNode	AbstractGraphNode.h	/^class AbstractGraphNode {$/;"	c
+BLOCKED	GridMap.h	/^    static const char BLOCKED = '@';$/;"	m	class:GridMap
+BOTTOM	RectangleSplitter.h	/^    const static int BOTTOM = 2;$/;"	m	class:RectangleSplitter
+CPD2	CPD2.cpp	/^CPD2::CPD2() {$/;"	f	class:CPD2
+CPD2	CPD2.cpp	/^CPD2::CPD2(const CPD2& orig) {$/;"	f	class:CPD2
+CPD2	CPD2.h	/^class CPD2 : public AbstractCPD {$/;"	c
+CPD2_H	CPD2.h	/^#define	CPD2_H$/;"	d
+CompareDijkstraNodes	DijkstraNode.h	/^class CompareDijkstraNodes {$/;"	c
+CompressedMoveDatabase	CompressedMoveDatabase.cpp	/^CompressedMoveDatabase::CompressedMoveDatabase() {$/;"	f	class:CompressedMoveDatabase
+CompressedMoveDatabase	CompressedMoveDatabase.cpp	/^CompressedMoveDatabase::CompressedMoveDatabase(const CompressedMoveDatabase& orig) {$/;"	f	class:CompressedMoveDatabase
+CompressedMoveDatabase	CompressedMoveDatabase.h	/^    CompressedMoveDatabase(AbstractGraph *pg)$/;"	f	class:CompressedMoveDatabase
+CompressedMoveDatabase	CompressedMoveDatabase.h	/^    CompressedMoveDatabase(AbstractGraph *pg, int first, int last)$/;"	f	class:CompressedMoveDatabase
+CompressedMoveDatabase	CompressedMoveDatabase.h	/^class CompressedMoveDatabase : public AbstractCPD {$/;"	c
+CompressedTable	CompressedTable.cpp	/^CompressedTable::CompressedTable() {$/;"	f	class:CompressedTable
+CompressedTable	CompressedTable.cpp	/^CompressedTable::CompressedTable(const CompressedTable & orig) {$/;"	f	class:CompressedTable
+CompressedTable	CompressedTable.h	/^    CompressedTable(int size[4]) {$/;"	f	class:CompressedTable
+CompressedTable	CompressedTable.h	/^class CompressedTable {$/;"	c
+DIAGDISTANCE	globals.h	/^    const int DIAGDISTANCE = 141;$/;"	v
+DijkstraNode	DijkstraNode.h	/^    DijkstraNode(int c, int r, double d)$/;"	f	struct:DijkstraNode
+DijkstraNode	DijkstraNode.h	/^    DijkstraNode(int id, double d)$/;"	f	struct:DijkstraNode
+DijkstraNode	DijkstraNode.h	/^struct DijkstraNode {$/;"	s
+EAST	globals.h	/^    const int EAST = 2;$/;"	v
+FastStack	CPD2.h	/^        FastStack() $/;"	f	struct:CPD2::FastStack
+FastStack	CPD2.h	/^    struct FastStack {$/;"	s	class:CPD2
+GRIDEDGE_H	GridEdge.h	/^#define	GRIDEDGE_H$/;"	d
+GRIDNODE_H	GridNode.h	/^#define	GRIDNODE_H$/;"	d
+GridEdge	GridEdge.cpp	/^GridEdge::GridEdge() {$/;"	f	class:GridEdge
+GridEdge	GridEdge.cpp	/^GridEdge::GridEdge(const GridEdge& orig) {$/;"	f	class:GridEdge
+GridEdge	GridEdge.h	/^    GridEdge(int n1, int n2, double d, double t, const string & someid)$/;"	f	class:GridEdge
+GridEdge	GridEdge.h	/^class GridEdge : public AbstractGraphEdge {$/;"	c
+GridMap	GridMap.cpp	/^GridMap::GridMap() {$/;"	f	class:GridMap
+GridMap	GridMap.cpp	/^GridMap::GridMap(const GridMap& orig) {$/;"	f	class:GridMap
+GridMap	GridMap.cpp	/^GridMap::GridMap(const string & filename) {$/;"	f	class:GridMap
+GridMap	GridMap.h	/^class GridMap : public AbstractGraph {$/;"	c
+GridNode	GridNode.cpp	/^GridNode::GridNode() {$/;"	f	class:GridNode
+GridNode	GridNode.h	/^    GridNode(int idx, int c, int r)$/;"	f	class:GridNode
+GridNode	GridNode.h	/^class GridNode : public AbstractGraphNode {$/;"	c
+LEFT	RectangleSplitter.h	/^    const static int LEFT = 3;$/;"	m	class:RectangleSplitter
+MAPTYPES	GridMap.h	/^    enum MAPTYPES {TILE, OCTILE, UNKNOWN};$/;"	g	class:GridMap
+MAX_HEIGHT	globals.h	/^    const int MAX_HEIGHT = 1; \/\/1000;$/;"	v
+MAX_MODES	ParamManager.h	/^    static const int MAX_MODES = 9;$/;"	m	class:ParamManager
+MAX_NODE_DEGREE	globals.h	/^    const int MAX_NODE_DEGREE = 10;$/;"	v
+MAX_WIDTH	globals.h	/^    const int MAX_WIDTH = 1; \/\/1000;$/;"	v
+MIDCOLUMN	RectangleSplitter.h	/^    const static int MIDCOLUMN = 4;$/;"	m	class:RectangleSplitter
+MIDROW	RectangleSplitter.h	/^    const static int MIDROW = 5;$/;"	m	class:RectangleSplitter
+MoveTable	MoveTable.cpp	/^MoveTable::MoveTable() {$/;"	f	class:MoveTable
+MoveTable	MoveTable.cpp	/^MoveTable::MoveTable(const MoveTable& orig) {$/;"	f	class:MoveTable
+MoveTable	MoveTable.h	/^    MoveTable(int col, int row)$/;"	f	class:MoveTable
+MoveTable	MoveTable.h	/^    MoveTable(int col, int row, int id)$/;"	f	class:MoveTable
+MoveTable	MoveTable.h	/^class MoveTable {$/;"	c
+NODIRECTION	globals.h	/^    const int NODIRECTION = 0;$/;"	v
+NOID	globals.h	/^    const string NOID = "noid";$/;"	v
+NONE	RectangleSplitter.h	/^    const static int NONE = 11;$/;"	m	class:RectangleSplitter
+NORTH	globals.h	/^    const int NORTH = 8;$/;"	v
+NORTHEAST	globals.h	/^    const int NORTHEAST = 1;$/;"	v
+NORTHWEST	globals.h	/^    const int NORTHWEST = 7;$/;"	v
+NO_VALUE	globals.h	/^    const unsigned int NO_VALUE = numeric_limits<unsigned int>::max();$/;"	v
+NR_COMPONENTS_CPD2	globals.h	/^    const int NR_COMPONENTS_CPD2 = 5;$/;"	v
+NR_DIRECTIONS	globals.h	/^    const int NR_DIRECTIONS = 8;$/;"	v
+OCTILE	GridMap.h	/^    enum MAPTYPES {TILE, OCTILE, UNKNOWN};$/;"	e	enum:GridMap::MAPTYPES
+ParamManager	ParamManager.cpp	/^ParamManager::ParamManager() {$/;"	f	class:ParamManager
+ParamManager	ParamManager.cpp	/^ParamManager::ParamManager(const ParamManager& orig) {$/;"	f	class:ParamManager
+ParamManager	ParamManager.h	/^    ParamManager(int argc, char ** argv) {$/;"	f	class:ParamManager
+ParamManager	ParamManager.h	/^class ParamManager {$/;"	c
+QTDatabase	QTDatabase.cpp	/^QTDatabase::QTDatabase() {$/;"	f	class:QTDatabase
+QTDatabase	QTDatabase.cpp	/^QTDatabase::QTDatabase(const QTDatabase& orig) {$/;"	f	class:QTDatabase
+QTDatabase	QTDatabase.h	/^    QTDatabase(AbstractGraph * pg)$/;"	f	class:QTDatabase
+QTDatabase	QTDatabase.h	/^    QTDatabase(AbstractGraph * pg, int first, int last)$/;"	f	class:QTDatabase
+QTDatabase	QTDatabase.h	/^class QTDatabase {$/;"	c
+QuadTree	QuadTree.cpp	/^QuadTree::QuadTree() {$/;"	f	class:QuadTree
+QuadTree	QuadTree.cpp	/^QuadTree::QuadTree(const QuadTree& orig) {$/;"	f	class:QuadTree
+QuadTree	QuadTree.h	/^class QuadTree {$/;"	c
+REACHABILITYTABLE_H	ReachabilityTable.h	/^#define	REACHABILITYTABLE_H$/;"	d
+RIGHT	RectangleSplitter.h	/^    const static int RIGHT = 1;$/;"	m	class:RectangleSplitter
+ROADMAPEDGE_H_	RoadMapEdge.h	/^#define ROADMAPEDGE_H_$/;"	d
+ROADMAPNODE_H_	RoadMapNode.h	/^#define ROADMAPNODE_H_$/;"	d
+ROADMAP_H_	RoadMap.h	/^#define ROADMAP_H_$/;"	d
+ReachabilityTable	ReachabilityTable.cpp	/^ReachabilityTable::ReachabilityTable() {$/;"	f	class:ReachabilityTable
+ReachabilityTable	ReachabilityTable.cpp	/^ReachabilityTable::ReachabilityTable(const ReachabilityTable& orig) {$/;"	f	class:ReachabilityTable
+ReachabilityTable	ReachabilityTable.h	/^class ReachabilityTable {$/;"	c
+Record	Scenario.h	/^struct Record {$/;"	s
+RecordRM	ScenarioRM.h	/^struct RecordRM {$/;"	s
+Rectangle	Rectangle.cpp	/^Rectangle::Rectangle() {$/;"	f	class:Rectangle
+Rectangle	Rectangle.h	/^    Rectangle(int ulc, int ulr, int brc, int brr)$/;"	f	class:Rectangle
+Rectangle	Rectangle.h	/^    Rectangle(int ulc, int ulr, int brc, int brr, int area, int move)$/;"	f	class:Rectangle
+Rectangle	Rectangle.h	/^class Rectangle : public SlimRectangle {$/;"	c
+RectangleSplitter	RectangleSplitter.cpp	/^RectangleSplitter::RectangleSplitter() {$/;"	f	class:RectangleSplitter
+RectangleSplitter	RectangleSplitter.cpp	/^RectangleSplitter::RectangleSplitter(const RectangleSplitter& orig) {$/;"	f	class:RectangleSplitter
+RectangleSplitter	RectangleSplitter.h	/^class RectangleSplitter {$/;"	c
+RoadMap	RoadMap.cpp	/^RoadMap::RoadMap() {$/;"	f	class:RoadMap
+RoadMap	RoadMap.cpp	/^RoadMap::RoadMap(const string & vertexfilename, const string & edgefilename) {$/;"	f	class:RoadMap
+RoadMap	RoadMap.h	/^class RoadMap : public AbstractGraph {$/;"	c
+RoadMapEdge	RoadMapEdge.cpp	/^RoadMapEdge::RoadMapEdge() {$/;"	f	class:RoadMapEdge
+RoadMapEdge	RoadMapEdge.h	/^    RoadMapEdge(int n1, int n2, double d, double t, const string & someid)$/;"	f	class:RoadMapEdge
+RoadMapEdge	RoadMapEdge.h	/^class RoadMapEdge : public AbstractGraphEdge {$/;"	c
+RoadMapNode	RoadMapNode.cpp	/^RoadMapNode::RoadMapNode() {$/;"	f	class:RoadMapNode
+RoadMapNode	RoadMapNode.cpp	/^RoadMapNode::RoadMapNode(const RoadMapNode & n) {$/;"	f	class:RoadMapNode
+RoadMapNode	RoadMapNode.h	/^    RoadMapNode(int idx, double somex, double somey, const string & sid)$/;"	f	class:RoadMapNode
+RoadMapNode	RoadMapNode.h	/^class RoadMapNode : public AbstractGraphNode {$/;"	c
+SLIMMERRECTANGLE_H	SlimmerRectangle.h	/^#define	SLIMMERRECTANGLE_H$/;"	d
+SOUTH	globals.h	/^    const int SOUTH = 4;$/;"	v
+SOUTHEAST	globals.h	/^    const int SOUTHEAST = 3;$/;"	v
+SOUTHWEST	globals.h	/^    const int SOUTHWEST = 5;$/;"	v
+STRAIGHTDISTANCE	globals.h	/^    const int STRAIGHTDISTANCE = 100;$/;"	v
+Scenario	Scenario.cpp	/^Scenario::Scenario(const Scenario& orig) {$/;"	f	class:Scenario
+Scenario	Scenario.h	/^    Scenario() :nr_records(0) {};$/;"	f	class:Scenario
+Scenario	Scenario.h	/^class Scenario {$/;"	c
+ScenarioRM	ScenarioRM.cpp	/^ScenarioRM::ScenarioRM(const ScenarioRM& orig) {$/;"	f	class:ScenarioRM
+ScenarioRM	ScenarioRM.h	/^    ScenarioRM()$/;"	f	class:ScenarioRM
+ScenarioRM	ScenarioRM.h	/^class ScenarioRM {$/;"	c
+SlimRectangle	SlimRectangle.cpp	/^SlimRectangle::SlimRectangle() {$/;"	f	class:SlimRectangle
+SlimRectangle	SlimRectangle.h	/^    SlimRectangle(int ulc, int ulr, int brc, int brr, int move)$/;"	f	class:SlimRectangle
+SlimRectangle	SlimRectangle.h	/^class SlimRectangle {$/;"	c
+SlimmerRectangle	SlimmerRectangle.cpp	/^SlimmerRectangle::SlimmerRectangle() {$/;"	f	class:SlimmerRectangle
+SlimmerRectangle	SlimmerRectangle.cpp	/^SlimmerRectangle::SlimmerRectangle(const SlimmerRectangle& orig) {$/;"	f	class:SlimmerRectangle
+SlimmerRectangle	SlimmerRectangle.h	/^    SlimmerRectangle(int lc, int ur, int rc, int br, int move)$/;"	f	class:SlimmerRectangle
+SlimmerRectangle	SlimmerRectangle.h	/^class SlimmerRectangle {$/;"	c
+StackElement	CPD2.h	/^        StackElement()$/;"	f	struct:CPD2::StackElement
+StackElement	CPD2.h	/^        StackElement(unsigned int bi, unsigned int mar)$/;"	f	struct:CPD2::StackElement
+StackElement	CPD2.h	/^    struct StackElement {$/;"	s	class:CPD2
+SubstringManager	SubstringManager.cpp	/^SubstringManager::SubstringManager() {$/;"	f	class:SubstringManager
+SubstringManager	SubstringManager.cpp	/^SubstringManager::SubstringManager(const SubstringManager& orig) {$/;"	f	class:SubstringManager
+SubstringManager	SubstringManager.h	/^class SubstringManager {$/;"	c
+TILE	GridMap.h	/^    enum MAPTYPES {TILE, OCTILE, UNKNOWN};$/;"	e	enum:GridMap::MAPTYPES
+TOP	RectangleSplitter.h	/^    const static int TOP = 0;$/;"	m	class:RectangleSplitter
+TRAVERSABLE	GridMap.h	/^    static const char TRAVERSABLE = '.';$/;"	m	class:GridMap
+TableCompresser	TableCompresser.cpp	/^TableCompresser::TableCompresser() {$/;"	f	class:TableCompresser
+TableCompresser	TableCompresser.cpp	/^TableCompresser::TableCompresser(const TableCompresser& orig) {$/;"	f	class:TableCompresser
+TableCompresser	TableCompresser.h	/^class TableCompresser {$/;"	c
+TableCompresser1	TableCompresser1.cpp	/^TableCompresser1::TableCompresser1() {$/;"	f	class:TableCompresser1
+TableCompresser1	TableCompresser1.cpp	/^TableCompresser1::TableCompresser1(const TableCompresser1& orig) {$/;"	f	class:TableCompresser1
+TableCompresser1	TableCompresser1.h	/^class TableCompresser1 : public TableCompresser {$/;"	c
+TableCompresser2	TableCompresser2.cpp	/^TableCompresser2::TableCompresser2() {$/;"	f	class:TableCompresser2
+TableCompresser2	TableCompresser2.cpp	/^TableCompresser2::TableCompresser2(const TableCompresser2& orig) {$/;"	f	class:TableCompresser2
+TableCompresser2	TableCompresser2.h	/^class TableCompresser2 : public TableCompresser {$/;"	c
+Tile	Tile.cpp	/^Tile::Tile() {$/;"	f	class:Tile
+Tile	Tile.cpp	/^Tile::Tile(const Tile& orig) {$/;"	f	class:Tile
+Tile	Tile.h	/^    Tile(int c, int r, int index)$/;"	f	class:Tile
+Tile	Tile.h	/^class Tile {$/;"	c
+UNKNOWN	GridMap.h	/^    enum MAPTYPES {TILE, OCTILE, UNKNOWN};$/;"	e	enum:GridMap::MAPTYPES
+UTILS2_H	utils2.h	/^#define	UTILS2_H$/;"	d
+WEST	globals.h	/^    const int WEST = 6;$/;"	v
+_COMPRESSEDMOVEDATABASE_H	CompressedMoveDatabase.h	/^#define	_COMPRESSEDMOVEDATABASE_H$/;"	d
+_COMPRESSEDTABLE_H	CompressedTable.h	/^#define	_COMPRESSEDTABLE_H$/;"	d
+_DIJKSTRANODE_H	DijkstraNode.h	/^#define	_DIJKSTRANODE_H$/;"	d
+_GLOBALS_H	globals.h	/^#define	_GLOBALS_H$/;"	d
+_GRIDMAP_H	GridMap.h	/^#define	_GRIDMAP_H$/;"	d
+_MOVETABLE_H	MoveTable.h	/^#define	_MOVETABLE_H$/;"	d
+_PARAMMANAGER_H	ParamManager.h	/^#define	_PARAMMANAGER_H$/;"	d
+_QTDATABASE_H	QTDatabase.h	/^#define	_QTDATABASE_H$/;"	d
+_QUADTREE_H	QuadTree.h	/^#define	_QUADTREE_H$/;"	d
+_RECTANGLESPLITTER_H	RectangleSplitter.h	/^#define	_RECTANGLESPLITTER_H$/;"	d
+_RECTANGLE_H	Rectangle.h	/^#define	_RECTANGLE_H$/;"	d
+_SCENARIORM_H	ScenarioRM.h	/^#define	_SCENARIORM_H$/;"	d
+_SCENARIO_H	Scenario.h	/^#define	_SCENARIO_H$/;"	d
+_SLIMRECTANGLE_H	SlimRectangle.h	/^#define	_SLIMRECTANGLE_H$/;"	d
+_SUBSTRINGMANAGER_H	SubstringManager.h	/^#define	_SUBSTRINGMANAGER_H$/;"	d
+_TABLECOMPRESSER1_H	TableCompresser1.h	/^#define	_TABLECOMPRESSER1_H$/;"	d
+_TABLECOMPRESSER2_H	TableCompresser2.h	/^#define	_TABLECOMPRESSER2_H$/;"	d
+_TABLECOMPRESSER_H	TableCompresser.h	/^#define	_TABLECOMPRESSER_H$/;"	d
+_TILE_H	Tile.h	/^#define	_TILE_H$/;"	d
+_UTILS_H	utils.h	/^#define	_UTILS_H$/;"	d
+addCompressedTable	CompressedMoveDatabase.h	/^    void addCompressedTable(int idx, const CompressedTable & table) {$/;"	f	class:CompressedMoveDatabase
+addEdge	GridNode.h	/^    void addEdge(AbstractGraphEdge *pe) {$/;"	f	class:GridNode
+addEdge	RoadMapNode.h	/^    void addEdge(AbstractGraphEdge * pe) {$/;"	f	class:RoadMapNode
+addQuadTree	QTDatabase.h	/^    void addQuadTree(int idx, const QuadTree & qt) {$/;"	f	class:QTDatabase
+addRectangles	CompressedTable.cpp	/^void CompressedTable::addRectangles(const vector<Rectangle> & elems, int quarter) {$/;"	f	class:CompressedTable
+addSlimmerRectangle	CompressedTable.h	/^    void addSlimmerRectangle(const SlimmerRectangle & rectangle, int idx, int quarter) {$/;"	f	class:CompressedTable
+allocate_mem	CompressedTable.h	/^    void allocate_mem(int size, int quarter) {$/;"	f	class:CompressedTable
+analyze_params	ParamManager.cpp	/^void ParamManager::analyze_params() {$/;"	f	class:ParamManager
+area	RectangleSplitter.h	/^    int area[4];$/;"	m	class:RectangleSplitter
+args	ParamManager.h	/^    vector<string> args;$/;"	m	class:ParamManager
+atoms_read	CPD2.h	/^        unsigned int atoms_read;$/;"	m	struct:CPD2::StackElement
+average_checks	CompressedMoveDatabase.h	/^    double average_checks;$/;"	m	class:CompressedMoveDatabase
+average_checks	QTDatabase.h	/^    double average_checks;$/;"	m	class:QTDatabase
+average_nr_checks	CompressedTable.h	/^    double average_nr_checks;$/;"	m	class:CompressedTable
+block_ids	QuadTree.h	/^    vector<int> block_ids;$/;"	m	class:QuadTree
+block_size	CPD2.h	/^    int block_size[5];$/;"	m	class:CPD2
+bottom_row	SlimRectangle.h	/^    int bottom_row;$/;"	m	class:SlimRectangle
+build	CompressedMoveDatabase.cpp	/^void CompressedMoveDatabase::build(bool list_trimming) {$/;"	f	class:CompressedMoveDatabase
+build	QTDatabase.cpp	/^void QTDatabase::build() {$/;"	f	class:QTDatabase
+build	QuadTree.cpp	/^void QuadTree::build(const MoveTable & mt, const AbstractGraph * graph) {$/;"	f	class:QuadTree
+build	ReachabilityTable.cpp	/^void ReachabilityTable::build(const AbstractGraph * pg) {$/;"	f	class:ReachabilityTable
+buildMaxHorizRectangle	TableCompresser2.cpp	/^Rectangle TableCompresser2::buildMaxHorizRectangle(int col, int row,$/;"	f	class:TableCompresser2
+buildMaxVertRectangle	TableCompresser2.cpp	/^Rectangle TableCompresser2::buildMaxVertRectangle(int col, int row,$/;"	f	class:TableCompresser2
+build_qt_gm	ParamManager.cpp	/^void ParamManager::build_qt_gm() const {$/;"	f	class:ParamManager
+build_qt_rm	ParamManager.cpp	/^void ParamManager::build_qt_rm() const {$/;"	f	class:ParamManager
+byte_idx	CPD2.h	/^        unsigned int byte_idx;$/;"	m	struct:CPD2::StackElement
+calculateDefaultMove	GridMap.h	/^    int calculateDefaultMove(const AbstractGraphNode *origin, const AbstractGraphNode *dest) const {$/;"	f	class:GridMap
+calculateDefaultMove	RoadMap.cpp	/^int RoadMap::calculateDefaultMove(const AbstractGraphNode *origin, const AbstractGraphNode *dest) const {$/;"	f	class:RoadMap
+call_appropriate_method	ParamManager.cpp	/^void ParamManager::call_appropriate_method() const {$/;"	f	class:ParamManager
+clear	CPD2.h	/^        void clear() {$/;"	f	struct:CPD2::FastStack
+col	DijkstraNode.h	/^    int col;$/;"	m	struct:DijkstraNode
+col	Tile.h	/^    int col;$/;"	m	class:Tile
+column	GridNode.h	/^    int column;$/;"	m	class:GridNode
+column	RoadMapNode.h	/^    int column;$/;"	m	class:RoadMapNode
+comp	utils.cpp	/^bool comp(AbstractGraphNode* n1, AbstractGraphNode* n2) {$/;"	f
+compressTable	TableCompresser1.cpp	/^CompressedTable TableCompresser1::compressTable(int col, int row,$/;"	f	class:TableCompresser1
+compressTable	TableCompresser2.cpp	/^CompressedTable TableCompresser2::compressTable(int col, int row,$/;"	f	class:TableCompresser2
+compressTable1	TableCompresser1.cpp	/^CompressedTable TableCompresser1::compressTable1(int col, int row,$/;"	f	class:TableCompresser1
+compressTable2	TableCompresser1.cpp	/^CompressedTable TableCompresser1::compressTable2(int col, int row,$/;"	f	class:TableCompresser1
+compressTable9	TableCompresser1.cpp	/^CompressedTable TableCompresser1::compressTable9(int col, int row,$/;"	f	class:TableCompresser1
+computeBottomRect2	RectangleSplitter.cpp	/^void RectangleSplitter::computeBottomRect2(const Rectangle & rec,$/;"	f	class:RectangleSplitter
+computeClearance	TableCompresser2.cpp	/^int TableCompresser2::computeClearance(int globalNodeIdx,$/;"	f	class:TableCompresser2
+computeCoveredAreaStats	CompressedMoveDatabase.cpp	/^void CompressedMoveDatabase::computeCoveredAreaStats(const AbstractGraph * graph) {$/;"	f	class:CompressedMoveDatabase
+computeDominantMoves	MoveTable.cpp	/^void MoveTable::computeDominantMoves(const AbstractGraph * graph) {$/;"	f	class:MoveTable
+computeGrid	RoadMap.cpp	/^void RoadMap::computeGrid() {$/;"	f	class:RoadMap
+computeLeftRect2	RectangleSplitter.cpp	/^void RectangleSplitter::computeLeftRect2(const Rectangle & rec,$/;"	f	class:RectangleSplitter
+computeRightRect2	RectangleSplitter.cpp	/^void RectangleSplitter::computeRightRect2(const Rectangle & rec,$/;"	f	class:RectangleSplitter
+computeTable	MoveTable.cpp	/^void MoveTable::computeTable(const AbstractGraph * graph) {$/;"	f	class:MoveTable
+computeTopRect2	RectangleSplitter.cpp	/^void RectangleSplitter::computeTopRect2(const Rectangle & rec,$/;"	f	class:RectangleSplitter
+computeWhereToSplit	RectangleSplitter.cpp	/^int RectangleSplitter::computeWhereToSplit(const Rectangle & rec) const {$/;"	f	class:RectangleSplitter
+compute_orientation	MoveTable.cpp	/^double MoveTable::compute_orientation(const AbstractGraph *graph,$/;"	f	class:MoveTable
+contains	CompressedTable.cpp	/^bool CompressedTable::contains(const Tile & tile, int idx, int quarter, $/;"	f	class:CompressedTable
+contains	SlimRectangle.h	/^    bool contains(const Tile & tile) const {$/;"	f	class:SlimRectangle
+contains	SlimmerRectangle.h	/^    bool contains(const Tile & tile) const {$/;"	f	class:SlimmerRectangle
+cost	GridMap.cpp	/^int GridMap::cost(const Tile & t1, const  Tile & t2) const {$/;"	f	class:GridMap
+cost	Scenario.h	/^    int cost;$/;"	m	struct:Record
+cost	ScenarioRM.h	/^    double cost;$/;"	m	struct:RecordRM
+counter	TableCompresser1.h	/^    int counter;$/;"	m	class:TableCompresser1
+covered_area	CompressedTable.h	/^    vector<double> covered_area;$/;"	m	class:CompressedTable
+covered_area_stats	CompressedMoveDatabase.h	/^    vector<double> covered_area_stats;$/;"	m	class:CompressedMoveDatabase
+createEdges	GridMap.cpp	/^void GridMap::createEdges() {$/;"	f	class:GridMap
+createEdges	GridMap.cpp	/^void GridMap::createEdges(int id) {$/;"	f	class:GridMap
+data	CPD2.h	/^        StackElement data[1000];$/;"	m	struct:CPD2::FastStack
+data	CPD2.h	/^    char* data[5];$/;"	m	class:CPD2
+data	SlimmerRectangle.h	/^    unsigned int data[3];$/;"	m	class:SlimmerRectangle
+data3	CompressedTable.h	/^    unsigned int* data3[4];$/;"	m	class:CompressedTable
+default_moves	CPD2.h	/^    char *default_moves;$/;"	m	class:CPD2
+default_moves	CompressedTable.h	/^    int default_moves[4];$/;"	m	class:CompressedTable
+detect_quarter	TableCompresser1.cpp	/^int TableCompresser1::detect_quarter(const Rectangle &r, const MoveTable &mt) const {$/;"	f	class:TableCompresser1
+differentRealColors	TableCompresser2.cpp	/^bool TableCompresser2::differentRealColors(int color1, int color2) const {$/;"	f	class:TableCompresser2
+display_usage_info	ParamManager.cpp	/^void ParamManager::display_usage_info() const {$/;"	f	class:ParamManager
+dist_table2	MoveTable.h	/^    vector<double> dist_table2;$/;"	m	class:MoveTable
+distance	DijkstraNode.h	/^    double distance;$/;"	m	struct:DijkstraNode
+distance	GridEdge.h	/^    double distance;$/;"	m	class:GridEdge
+distance	RoadMapEdge.h	/^    double distance;$/;"	m	class:RoadMapEdge
+dominant_moves	MoveTable.h	/^    int dominant_moves[4];$/;"	m	class:MoveTable
+edges	GridNode.h	/^    vector<AbstractGraphEdge*> edges;$/;"	m	class:GridNode
+edges	RoadMapNode.h	/^    vector<AbstractGraphEdge*> edges;$/;"	m	class:RoadMapNode
+empty	CPD2.h	/^        bool empty() {$/;"	f	struct:CPD2::FastStack
+encodeBR	CompressedTable.h	/^    void encodeBR(int row, int idx, int quarter) {$/;"	f	class:CompressedTable
+encodeBR	SlimmerRectangle.h	/^    void encodeBR(int row) {$/;"	f	class:SlimmerRectangle
+encodeLC	CompressedTable.h	/^    void encodeLC(int col, int idx, int quarter) {$/;"	f	class:CompressedTable
+encodeLC	SlimmerRectangle.h	/^    void encodeLC(int col) {$/;"	f	class:SlimmerRectangle
+encodeMove	CompressedTable.h	/^    void encodeMove(int move, int idx, int quarter) {$/;"	f	class:CompressedTable
+encodeMove	SlimmerRectangle.h	/^    void encodeMove(int move) {$/;"	f	class:SlimmerRectangle
+encodeRC	CompressedTable.h	/^    void encodeRC(int col, int idx, int quarter) {$/;"	f	class:CompressedTable
+encodeRC	SlimmerRectangle.h	/^    void encodeRC(int col) {$/;"	f	class:SlimmerRectangle
+encodeRecord	CompressedTable.h	/^    void encodeRecord(int lc, int ur, int rc, int br, int move, int idx, int quarter) {$/;"	f	class:CompressedTable
+encodeUR	CompressedTable.h	/^    void encodeUR(int row, int idx, int quarter) {$/;"	f	class:CompressedTable
+encodeUR	SlimmerRectangle.h	/^    void encodeUR(int row) {$/;"	f	class:SlimmerRectangle
+filter_rectangles_by_default_move1	TableCompresser1.cpp	/^vector<Rectangle> TableCompresser1::filter_rectangles_by_default_move1(vector<Rectangle> & rectangles,$/;"	f	class:TableCompresser1
+filter_rectangles_by_default_move2	TableCompresser1.cpp	/^void TableCompresser1::filter_rectangles_by_default_move2(multiset<Rectangle> & rectangles,$/;"	f	class:TableCompresser1
+filter_rectangles_by_default_move3	TableCompresser1.cpp	/^void TableCompresser1::filter_rectangles_by_default_move3(vector<Rectangle> & rectangles,$/;"	f	class:TableCompresser1
+findPath	AbstractCPD.cpp	/^void AbstractCPD::findPath(int startIdx, int targetIdx,$/;"	f	class:AbstractCPD
+find_paths_gm	ParamManager.cpp	/^void ParamManager::find_paths_gm() const {$/;"	f	class:ParamManager
+find_paths_rm	ParamManager.cpp	/^void ParamManager::find_paths_rm() const {$/;"	f	class:ParamManager
+first_line_homog_idx	RectangleSplitter.h	/^    int first_line_homog_idx[4];$/;"	m	class:RectangleSplitter
+first_node_idx	CompressedMoveDatabase.h	/^    int first_node_idx;$/;"	m	class:CompressedMoveDatabase
+first_node_idx	QTDatabase.h	/^    int first_node_idx;$/;"	m	class:QTDatabase
+getAverageChecks	CompressedMoveDatabase.h	/^    double getAverageChecks() const {$/;"	f	class:CompressedMoveDatabase
+getAverageNrChecks	CompressedTable.h	/^    double getAverageNrChecks() const {$/;"	f	class:CompressedTable
+getAverageNrChecks	QuadTree.h	/^    double getAverageNrChecks() const {$/;"	f	class:QuadTree
+getBottomRow	CompressedTable.h	/^    unsigned int getBottomRow(int idx, int quarter) const {$/;"	f	class:CompressedTable
+getBottomRow	SlimRectangle.h	/^    int getBottomRow() const {$/;"	f	class:SlimRectangle
+getBottomRow	SlimmerRectangle.h	/^    int getBottomRow() const {$/;"	f	class:SlimmerRectangle
+getColor	TableCompresser2.cpp	/^int TableCompresser2::getColor(int col, int row,$/;"	f	class:TableCompresser2
+getColumn	GridNode.h	/^    int getColumn() const{$/;"	f	class:GridNode
+getColumn	RoadMapNode.h	/^    int getColumn() const {$/;"	f	class:RoadMapNode
+getCost	GridEdge.h	/^    double getCost() const {$/;"	f	class:GridEdge
+getCost	RoadMapEdge.h	/^    double getCost() const {$/;"	f	class:RoadMapEdge
+getCoveredAreaStats	CompressedMoveDatabase.h	/^    const vector<double> & getCoveredAreaStats() const {$/;"	f	class:CompressedMoveDatabase
+getCoveredAreaStats	CompressedTable.h	/^    const vector<double> & getCoveredAreaStats() const {$/;"	f	class:CompressedTable
+getData	SlimmerRectangle.h	/^    int getData(int idx) const {$/;"	f	class:SlimmerRectangle
+getDefaultMove	CPD2.cpp	/^int CPD2::getDefaultMove(int stIdx, int tgIdx, const AbstractGraph *gr) const {$/;"	f	class:CPD2
+getDefaultMove	CompressedTable.h	/^    int getDefaultMove(int target_col, int target_row, int origin_col, int origin_row) const {$/;"	f	class:CompressedTable
+getDegree	GridNode.h	/^    int getDegree() const {$/;"	f	class:GridNode
+getDegree	RoadMapNode.h	/^    int getDegree() const {$/;"	f	class:RoadMapNode
+getDistance	GridEdge.h	/^    double getDistance() const {$/;"	f	class:GridEdge
+getDistance	RoadMapEdge.h	/^    double getDistance() const {$/;"	f	class:RoadMapEdge
+getDominantMove	MoveTable.h	/^    int getDominantMove(int quarter) const {$/;"	f	class:MoveTable
+getEdge	GridNode.h	/^    const AbstractGraphEdge * getEdge(unsigned int index) const {$/;"	f	class:GridNode
+getEdge	RoadMapNode.h	/^    const AbstractGraphEdge* getEdge(unsigned int index) const {$/;"	f	class:RoadMapNode
+getEdges	GridNode.h	/^    const vector<AbstractGraphEdge*> & getEdges() const {$/;"	f	class:GridNode
+getEdges	RoadMapNode.h	/^    const vector<AbstractGraphEdge*> & getEdges() const {$/;"	f	class:RoadMapNode
+getGlobalIdx	GridNode.h	/^    int getGlobalIdx() const {$/;"	f	class:GridNode
+getGlobalIdx	RoadMapNode.h	/^    int getGlobalIdx() const {$/;"	f	class:RoadMapNode
+getHead	CPD2.h	/^    int getHead(int nodeIdx, int component, int quarter) const {$/;"	f	class:CPD2
+getHeight	GridMap.h	/^    int getHeight() const {$/;"	f	class:GridMap
+getHeight	RoadMap.cpp	/^int RoadMap::getHeight() const {$/;"	f	class:RoadMap
+getHeight	SlimRectangle.h	/^    int getHeight() const {$/;"	f	class:SlimRectangle
+getHeight	SlimmerRectangle.h	/^    int getHeight() const {$/;"	f	class:SlimmerRectangle
+getId	GridEdge.h	/^    const string & getId() const {$/;"	f	class:GridEdge
+getId	RoadMapEdge.h	/^    const string & getId() const {$/;"	f	class:RoadMapEdge
+getIdx	GridMap.h	/^    int getIdx(int c, int r) const {$/;"	f	class:GridMap
+getLeftCol	CompressedTable.h	/^    unsigned int getLeftCol(int idx, int quarter) const {$/;"	f	class:CompressedTable
+getLeftCol	SlimRectangle.h	/^    int getLeftCol() const {$/;"	f	class:SlimRectangle
+getLeftCol	SlimmerRectangle.h	/^    unsigned int getLeftCol() const {$/;"	f	class:SlimmerRectangle
+getMove	CPD2.cpp	/^int CPD2::getMove(int startIdx, int targetIdx, int & nr_rect_checks,$/;"	f	class:CPD2
+getMove	CompressedMoveDatabase.h	/^    int getMove(int startIdx, int targetIdx, int & nr_rect_checks,$/;"	f	class:CompressedMoveDatabase
+getMove	CompressedTable.cpp	/^int CompressedTable::getMove(const Tile & dest, int origin_col, int origin_row,$/;"	f	class:CompressedTable
+getMove	CompressedTable.h	/^    unsigned int getMove(int idx, int quarter) const {$/;"	f	class:CompressedTable
+getMove	GridMap.cpp	/^int GridMap::getMove(const Tile & orig, const Tile & dest) const {$/;"	f	class:GridMap
+getMove	MoveTable.h	/^    int getMove(int idx) const {$/;"	f	class:MoveTable
+getMove	SlimRectangle.h	/^    int getMove() const {$/;"	f	class:SlimRectangle
+getMove	SlimmerRectangle.h	/^    int getMove() const {$/;"	f	class:SlimmerRectangle
+getNeighborIdx	GridNode.h	/^    int getNeighborIdx(const AbstractGraphEdge * edge) const {$/;"	f	class:GridNode
+getNeighborIdx	RoadMapNode.h	/^    int getNeighborIdx(const AbstractGraphEdge * edge) const {$/;"	f	class:RoadMapNode
+getNeighbors	GridMap.cpp	/^vector<int> GridMap::getNeighbors(int id) const {$/;"	f	class:GridMap
+getNextValueAndUpdateStack	CPD2.cpp	/^unsigned int CPD2::getNextValueAndUpdateStack(int component) {$/;"	f	class:CPD2
+getNextValueAndUpdateStack2	CPD2.cpp	/^unsigned int CPD2::getNextValueAndUpdateStack2(int component) {$/;"	f	class:CPD2
+getNode	GridMap.h	/^    AbstractGraphNode * getNode(unsigned int col, unsigned int row) const {$/;"	f	class:GridMap
+getNode	GridMap.h	/^    AbstractGraphNode * getNode(unsigned int idx) const {$/;"	f	class:GridMap
+getNode	RoadMap.h	/^    AbstractGraphNode * getNode(unsigned int col, unsigned int row) const {$/;"	f	class:RoadMap
+getNode	RoadMap.h	/^    AbstractGraphNode* getNode(unsigned int idx) const {$/;"	f	class:RoadMap
+getNode1Idx	GridEdge.h	/^    int getNode1Idx() const {$/;"	f	class:GridEdge
+getNode1Idx	RoadMapEdge.h	/^    int getNode1Idx() const {$/;"	f	class:RoadMapEdge
+getNode2Idx	GridEdge.h	/^    int getNode2Idx() const {$/;"	f	class:GridEdge
+getNode2Idx	RoadMapEdge.h	/^    int getNode2Idx() const {$/;"	f	class:RoadMapEdge
+getNodeIndexesOnColumn	GridMap.h	/^    const vector<int> & getNodeIndexesOnColumn(unsigned int c) const {$/;"	f	class:GridMap
+getNodeIndexesOnColumn	RoadMap.cpp	/^const vector<int> & RoadMap::getNodeIndexesOnColumn(unsigned int c) const {$/;"	f	class:RoadMap
+getNodeIndexesOnRow	GridMap.h	/^    const vector<int> & getNodeIndexesOnRow(unsigned int r) const {$/;"	f	class:GridMap
+getNodeIndexesOnRow	RoadMap.cpp	/^const vector<int> & RoadMap::getNodeIndexesOnRow(unsigned int r) const {$/;"	f	class:RoadMap
+getNodes	GridMap.h	/^    const vector<AbstractGraphNode*> & getNodes() const {$/;"	f	class:GridMap
+getNodes	RoadMap.cpp	/^const vector<AbstractGraphNode*> & RoadMap::getNodes() const {$/;"	f	class:RoadMap
+getNr1x1Rectangles	CompressedMoveDatabase.h	/^    int getNr1x1Rectangles() const {$/;"	f	class:CompressedMoveDatabase
+getNr1x1Rectangles	TableCompresser1.h	/^    int getNr1x1Rectangles() const {$/;"	f	class:TableCompresser1
+getNr1x1Tables	TableCompresser2.h	/^    int getNr1x1Tables() const {$/;"	f	class:TableCompresser2
+getNrAverageChecks	QTDatabase.h	/^    double getNrAverageChecks() const {$/;"	f	class:QTDatabase
+getNrBlocks	QTDatabase.h	/^    int getNrBlocks() const {$/;"	f	class:QTDatabase
+getNrBlocks	QuadTree.h	/^    int getNrBlocks() const {$/;"	f	class:QuadTree
+getNrLocations	Rectangle.h	/^    int getNrLocations() const {$/;"	f	class:Rectangle
+getNrNodes	GridMap.h	/^    int getNrNodes() const {$/;"	f	class:GridMap
+getNrNodes	RoadMap.cpp	/^int RoadMap::getNrNodes() const {$/;"	f	class:RoadMap
+getNrRecords	Scenario.h	/^    int getNrRecords() const {$/;"	f	class:Scenario
+getNrRecords	ScenarioRM.h	/^    int getNrRecords() const {$/;"	f	class:ScenarioRM
+getNrRectangles	CompressedMoveDatabase.h	/^    int getNrRectangles() const {$/;"	f	class:CompressedMoveDatabase
+getNrRectangles	CompressedTable.h	/^    int getNrRectangles() const {$/;"	f	class:CompressedTable
+getNrRectangles	CompressedTable.h	/^    int getNrRectangles(int quarter) const {$/;"	f	class:CompressedTable
+getNrRectanglesBeforeDeMoFiltering	CompressedMoveDatabase.h	/^    int getNrRectanglesBeforeDeMoFiltering() const {$/;"	f	class:CompressedMoveDatabase
+getNrRectanglesBeforeDeMoFiltering	TableCompresser1.h	/^    int getNrRectanglesBeforeDeMoFiltering() const {$/;"	f	class:TableCompresser1
+getNrTablesBeforeDeMoFiltering	TableCompresser2.h	/^    int getNrTablesBeforeDeMoFiltering() const {$/;"	f	class:TableCompresser2
+getOrigCol	MoveTable.h	/^    int getOrigCol() const {$/;"	f	class:MoveTable
+getOrigRow	MoveTable.h	/^    int getOrigRow() const {$/;"	f	class:MoveTable
+getOriginIdx	MoveTable.h	/^    int getOriginIdx() const {$/;"	f	class:MoveTable
+getQuarter	utils2.cpp	/^int getQuarter(int target_col, int target_row, int origin_col, int origin_row) {$/;"	f
+getRecord	Scenario.h	/^    const Record & getRecord(int index) {$/;"	f	class:Scenario
+getRecord	ScenarioRM.h	/^    const RecordRM & getRecord(int index) {$/;"	f	class:ScenarioRM
+getRightCol	CompressedTable.h	/^    unsigned int getRightCol(int idx, int quarter) const {$/;"	f	class:CompressedTable
+getRightCol	SlimRectangle.h	/^    int getRightCol() const {$/;"	f	class:SlimRectangle
+getRightCol	SlimmerRectangle.h	/^    int getRightCol() const {$/;"	f	class:SlimmerRectangle
+getRow	GridNode.h	/^    int getRow() const {$/;"	f	class:GridNode
+getRow	RoadMapNode.h	/^    int getRow() const {$/;"	f	class:RoadMapNode
+getStringId	GridNode.h	/^    const string & getStringId() const {$/;"	f	class:GridNode
+getStringId	RoadMapNode.h	/^    const string & getStringId() const {$/;"	f	class:RoadMapNode
+getTime	GridEdge.h	/^    double getTime() const {$/;"	f	class:GridEdge
+getTime	RoadMapEdge.h	/^    double getTime() const {$/;"	f	class:RoadMapEdge
+getTypeOfRecord	CPD2.h	/^    unsigned int getTypeOfRecord(int component) {$/;"	f	class:CPD2
+getUpperRow	CompressedTable.h	/^    unsigned int getUpperRow(int idx, int quarter) const {$/;"	f	class:CompressedTable
+getUpperRow	SlimRectangle.h	/^    int getUpperRow() const {$/;"	f	class:SlimRectangle
+getUpperRow	SlimmerRectangle.h	/^    int getUpperRow() const {$/;"	f	class:SlimmerRectangle
+getWidth	GridMap.h	/^    int getWidth() const {$/;"	f	class:GridMap
+getWidth	RoadMap.cpp	/^int RoadMap::getWidth() const {$/;"	f	class:RoadMap
+getWidth	SlimRectangle.h	/^    int getWidth() const {$/;"	f	class:SlimRectangle
+getWidth	SlimmerRectangle.h	/^    int getWidth() const {$/;"	f	class:SlimmerRectangle
+getX	GridNode.h	/^    double getX() const {$/;"	f	class:GridNode
+getX	RoadMapNode.h	/^    double getX() const {$/;"	f	class:RoadMapNode
+getY	GridNode.h	/^    double getY() const {$/;"	f	class:GridNode
+getY	RoadMapNode.h	/^    double getY() const {$/;"	f	class:RoadMapNode
+globalIdx	RoadMapNode.h	/^    int globalIdx;$/;"	m	class:RoadMapNode
+heads	CPD2.h	/^    int* heads[5];$/;"	m	class:CPD2
+height	RoadMap.h	/^    int height;$/;"	m	class:RoadMap
+homogeneous	QuadTree.cpp	/^bool QuadTree::homogeneous(const MoveTable & mt, const AbstractGraph * graph,$/;"	f	class:QuadTree
+id	GridEdge.h	/^    string id;$/;"	m	class:GridEdge
+id	RoadMapEdge.h	/^    string id;$/;"	m	class:RoadMapEdge
+id	Tile.h	/^    int id;$/;"	m	class:Tile
+idx	DijkstraNode.h	/^    int idx;$/;"	m	struct:DijkstraNode
+index	GridNode.h	/^    int index;$/;"	m	class:GridNode
+indexNodesOnRowsAndCols	RoadMap.cpp	/^void RoadMap::indexNodesOnRowsAndCols() {$/;"	f	class:RoadMap
+init	RectangleSplitter.cpp	/^void RectangleSplitter::init(const Rectangle & rec,$/;"	f	class:RectangleSplitter
+init	SlimmerRectangle.h	/^    void init(int lc, int ur, int rc, int br, int move) {$/;"	f	class:SlimmerRectangle
+initComponentStack	CPD2.h	/^    void initComponentStack(int nodeIdx, int component, int quarter) {$/;"	f	class:CPD2
+isObstacle	GridMap.h	/^    bool isObstacle(int col, int row) const {$/;"	f	class:GridMap
+is_mode_build_cpd_rd	ParamManager.h	/^    bool is_mode_build_cpd_rd() const {$/;"	f	class:ParamManager
+is_mode_build_qt_gridmap	ParamManager.h	/^    bool is_mode_build_qt_gridmap() const {$/;"	f	class:ParamManager
+is_mode_build_qt_roadmap	ParamManager.h	/^    bool is_mode_build_qt_roadmap() const {$/;"	f	class:ParamManager
+is_mode_pathfinding	ParamManager.h	/^    bool is_mode_pathfinding() const {$/;"	f	class:ParamManager
+is_mode_pathfinding_rm	ParamManager.h	/^    bool is_mode_pathfinding_rm() const {$/;"	f	class:ParamManager
+is_mode_pf_cpd2	ParamManager.h	/^    bool is_mode_pf_cpd2() const {$/;"	f	class:ParamManager
+is_mode_preprocessing_gridmap	ParamManager.h	/^    bool is_mode_preprocessing_gridmap() const {$/;"	f	class:ParamManager
+is_mode_preprocessing_roadmap	ParamManager.h	/^    bool is_mode_preprocessing_roadmap() const {$/;"	f	class:ParamManager
+is_mode_printing	ParamManager.h	/^    bool is_mode_printing() const {$/;"	f	class:ParamManager
+last_node_idx	CompressedMoveDatabase.h	/^    int last_node_idx;$/;"	m	class:CompressedMoveDatabase
+last_node_idx	QTDatabase.h	/^    int last_node_idx;$/;"	m	class:QTDatabase
+left_col	SlimRectangle.h	/^    int left_col;$/;"	m	class:SlimRectangle
+line	RectangleSplitter.h	/^    int line[4];$/;"	m	class:RectangleSplitter
+list_length	CPD2.h	/^    int *list_length; \/\/ # rectangles in a list$/;"	m	class:CPD2
+main	main.cpp	/^int main(int argc, char** argv) {$/;"	f
+map_type	GridMap.h	/^    MAPTYPES map_type;$/;"	m	class:GridMap
+mapfile	Scenario.h	/^    std::string mapfile;$/;"	m	struct:Record
+markLocationsAsCovered	TableCompresser2.cpp	/^void TableCompresser2::markLocationsAsCovered(const Rectangle & r,$/;"	f	class:TableCompresser2
+max_atoms_to_read	CPD2.h	/^        unsigned int max_atoms_to_read;$/;"	m	struct:CPD2::StackElement
+mergeRectsInList	TableCompresser1.cpp	/^int TableCompresser1::mergeRectsInList(vector<Rectangle> & rectangles) {$/;"	f	class:TableCompresser1
+mode	ParamManager.h	/^    int mode;$/;"	m	class:ParamManager
+most_recent_value	CPD2.h	/^    int most_recent_value[5];$/;"	m	class:CPD2
+move	RectangleSplitter.h	/^    int move[4];$/;"	m	class:RectangleSplitter
+move	SlimRectangle.h	/^    int move;$/;"	m	class:SlimRectangle
+move_table2	MoveTable.h	/^    vector<int> move_table2;$/;"	m	class:MoveTable
+n	QuadTree.h	/^    int n;$/;"	m	class:QuadTree
+node1	GridEdge.h	/^    int node1;$/;"	m	class:GridEdge
+node1	RoadMapEdge.h	/^    int node1;$/;"	m	class:RoadMapEdge
+node2	GridEdge.h	/^    int node2;$/;"	m	class:GridEdge
+node2	RoadMapEdge.h	/^    int node2;$/;"	m	class:RoadMapEdge
+node_indexes	GridMap.h	/^    vector<vector<int> > node_indexes;$/;"	m	class:GridMap
+node_indexing_per_columns	GridMap.h	/^    vector<vector<int> > node_indexing_per_columns;$/;"	m	class:GridMap
+node_indexing_per_columns	RoadMap.h	/^    vector<vector<int> > node_indexing_per_columns;$/;"	m	class:RoadMap
+node_indexing_per_rows	GridMap.h	/^    vector<vector<int> > node_indexing_per_rows;$/;"	m	class:GridMap
+node_indexing_per_rows	RoadMap.h	/^    vector<vector<int> > node_indexing_per_rows;$/;"	m	class:RoadMap
+nodes	GridMap.h	/^    vector<AbstractGraphNode*> nodes;$/;"	m	class:GridMap
+nodes	RoadMap.h	/^    vector<AbstractGraphNode*> nodes;$/;"	m	class:RoadMap
+noise	RectangleSplitter.h	/^    int noise[4];$/;"	m	class:RectangleSplitter
+nrUncoveredLocations	TableCompresser2.cpp	/^int TableCompresser2::nrUncoveredLocations(const Rectangle & r,$/;"	f	class:TableCompresser2
+nr_1x1_rectangles	CompressedMoveDatabase.h	/^    int nr_1x1_rectangles;$/;"	m	class:CompressedMoveDatabase
+nr_1x1_rectangles	TableCompresser1.h	/^    int nr_1x1_rectangles;$/;"	m	class:TableCompresser1
+nr_args	ParamManager.h	/^    int nr_args;$/;"	m	class:ParamManager
+nr_blocks	QTDatabase.h	/^    int nr_blocks;$/;"	m	class:QTDatabase
+nr_cols	GridMap.h	/^    int nr_cols;$/;"	m	class:GridMap
+nr_heads	CPD2.h	/^    int nr_heads[5];$/;"	m	class:CPD2
+nr_locations	Rectangle.h	/^    int nr_locations;$/;"	m	class:Rectangle
+nr_nodes	CPD2.h	/^    int nr_nodes; \/\/ the number of nodes in the graph$/;"	m	class:CPD2
+nr_records	CompressedTable.h	/^    int nr_records[4];$/;"	m	class:CompressedTable
+nr_records	Scenario.h	/^    int nr_records;$/;"	m	class:Scenario
+nr_rectangles	CompressedMoveDatabase.h	/^    int nr_rectangles;$/;"	m	class:CompressedMoveDatabase
+nr_rectangles_before_demo	CompressedMoveDatabase.h	/^    int nr_rectangles_before_demo;$/;"	m	class:CompressedMoveDatabase
+nr_rectangles_before_demo	TableCompresser1.h	/^    int nr_rectangles_before_demo;$/;"	m	class:TableCompresser1
+nr_rows	GridMap.h	/^    int nr_rows;$/;"	m	class:GridMap
+nr_traversable_tiles	GridMap.h	/^    int nr_traversable_tiles;$/;"	m	class:GridMap
+obstacles	GridMap.h	/^    bool obstacles[MAX_WIDTH][MAX_HEIGHT];$/;"	m	class:GridMap
+operator ()	DijkstraNode.h	/^    bool operator()(DijkstraNode & t1, DijkstraNode & t2)$/;"	f	class:CompareDijkstraNodes
+operator <	AbstractGraphNode.h	/^    bool operator<(const AbstractGraphNode & ref) const {$/;"	f	class:AbstractGraphNode
+operator <	Rectangle.h	/^    bool operator < (const Rectangle & ref) const {$/;"	f	class:Rectangle
+operator <<	utils.cpp	/^ostream & operator << (ostream &os, const CompressedMoveDatabase & cmd) {$/;"	f
+operator <<	utils.cpp	/^ostream & operator << (ostream &os, const CompressedTable & ct) {$/;"	f
+operator <<	utils.cpp	/^ostream & operator << (ostream &os, const Rectangle & rectangle) {$/;"	f
+operator <<	utils.cpp	/^ostream & operator << (ostream &os, const RoadMapEdge & edge) {$/;"	f
+operator <<	utils.cpp	/^ostream & operator << (ostream &os, const RoadMapNode & node) {$/;"	f
+operator <<	utils.cpp	/^ostream & operator << (ostream &os, const SlimRectangle & rectangle) {$/;"	f
+operator <<	utils.cpp	/^ostream & operator << (ostream &os, const SlimmerRectangle & rectangle) {$/;"	f
+operator =	CompressedTable.h	/^    CompressedTable & operator= (const CompressedTable & orig) {$/;"	f	class:CompressedTable
+orig_col	MoveTable.h	/^    int orig_col;$/;"	m	class:MoveTable
+orig_node_idx	MoveTable.h	/^    int orig_node_idx;$/;"	m	class:MoveTable
+orig_row	MoveTable.h	/^    int orig_row;$/;"	m	class:MoveTable
+pathExists	ReachabilityTable.h	/^    bool pathExists(const AbstractGraphNode *pn1, const AbstractGraphNode *pn2) const {$/;"	f	class:ReachabilityTable
+pathExists	ReachabilityTable.h	/^    bool pathExists(int nodeIdx1, int nodeIdx2) const {$/;"	f	class:ReachabilityTable
+pg	CompressedMoveDatabase.h	/^    AbstractGraph *pg;$/;"	m	class:CompressedMoveDatabase
+pg	QTDatabase.h	/^    AbstractGraph *pg;$/;"	m	class:QTDatabase
+pop	CPD2.h	/^        void pop() {$/;"	f	struct:CPD2::FastStack
+preprocess_gm	ParamManager.cpp	/^void ParamManager::preprocess_gm() const {$/;"	f	class:ParamManager
+preprocess_rm	ParamManager.cpp	/^void ParamManager::preprocess_rm(bool list_trimming) const {$/;"	f	class:ParamManager
+print_build_qt_stats	ParamManager.cpp	/^void ParamManager::print_build_qt_stats(const AbstractGraph* graph,$/;"	f	class:ParamManager
+print_preprocessing_stats	ParamManager.cpp	/^void ParamManager::print_preprocessing_stats(const AbstractGraph* graph,$/;"	f	class:ParamManager
+processRectangles	TableCompresser1.cpp	/^void TableCompresser1::processRectangles(vector<Rectangle> & rectangles, $/;"	f	class:TableCompresser1
+push	CPD2.h	/^        void push(const StackElement & se) {$/;"	f	struct:CPD2::FastStack
+qts	QTDatabase.h	/^    vector<QuadTree> qts;$/;"	m	class:QTDatabase
+readDataFromStream	CompressedTable.cpp	/^void CompressedTable::readDataFromStream(ifstream & infile) {$/;"	f	class:CompressedTable
+readDataFromStream	Rectangle.cpp	/^void Rectangle::readDataFromStream(ifstream & infile) {$/;"	f	class:Rectangle
+readDataFromStream	SlimRectangle.cpp	/^void SlimRectangle::readDataFromStream(ifstream & infile) {$/;"	f	class:SlimRectangle
+readDataFromStream	SlimmerRectangle.cpp	/^void SlimmerRectangle::readDataFromStream(ifstream & infile) {$/;"	f	class:SlimmerRectangle
+readDataFromStream2	CPD2.cpp	/^void CPD2::readDataFromStream2(ifstream & infile) {$/;"	f	class:CPD2
+readDataFromStream2	CompressedMoveDatabase.cpp	/^void CompressedMoveDatabase::readDataFromStream2(ifstream & infile) {$/;"	f	class:CompressedMoveDatabase
+readEdges	RoadMap.cpp	/^void RoadMap::readEdges(const string & filename, unordered_map<string, int> & index_map) {$/;"	f	class:RoadMap
+readFromFile	ReachabilityTable.cpp	/^bool ReachabilityTable::readFromFile(const string & filename) {$/;"	f	class:ReachabilityTable
+readFromFile	Scenario.cpp	/^void Scenario::readFromFile(char* filename) {$/;"	f	class:Scenario
+readFromFile	ScenarioRM.cpp	/^void ScenarioRM::readFromFile(const string & filename) {$/;"	f	class:ScenarioRM
+readNodes	RoadMap.cpp	/^void RoadMap::readNodes(const string & filename, unordered_map<string, int> & index_map) {$/;"	f	class:RoadMap
+records	Scenario.h	/^    Record records[5000];$/;"	m	class:Scenario
+records	ScenarioRM.h	/^    vector<RecordRM> records;$/;"	m	class:ScenarioRM
+rectangle_encodes_default_moves	TableCompresser1.cpp	/^bool TableCompresser1::rectangle_encodes_default_moves(const MoveTable & mt,$/;"	f	class:TableCompresser1
+repetitions_left	CPD2.h	/^    int repetitions_left[5];$/;"	m	class:CPD2
+resetAMNL	RectangleSplitter.h	/^    void resetAMNL(int idx) {$/;"	f	class:RectangleSplitter
+right_col	SlimRectangle.h	/^    int right_col;$/;"	m	class:SlimRectangle
+row	DijkstraNode.h	/^    int row;$/;"	m	struct:DijkstraNode
+row	GridNode.h	/^    int row;$/;"	m	class:GridNode
+row	RoadMapNode.h	/^    int row;$/;"	m	class:RoadMapNode
+row	Tile.h	/^    int row;$/;"	m	class:Tile
+scc_labels	ReachabilityTable.h	/^    vector<int> scc_labels;$/;"	m	class:ReachabilityTable
+setAsTrivial	CompressedTable.cpp	/^void CompressedTable::setAsTrivial(const AbstractGraph * graph) {$/;"	f	class:CompressedTable
+setAsTrivial	QuadTree.cpp	/^void QuadTree::setAsTrivial(const AbstractGraph * graph) {$/;"	f	class:QuadTree
+setColumn	GridNode.h	/^    void setColumn(int column) {$/;"	f	class:GridNode
+setColumn	RoadMapNode.h	/^    void setColumn(int c) {$/;"	f	class:RoadMapNode
+setDefaultMove	CompressedTable.h	/^    void setDefaultMove(int move, int quarter) {$/;"	f	class:CompressedTable
+setDefaultMoves	CompressedTable.h	/^    void setDefaultMoves(int *moves) {$/;"	f	class:CompressedTable
+setMove	CompressedTable.h	/^    void setMove(int move, int idx, int quarter) {$/;"	f	class:CompressedTable
+setMove	SlimRectangle.h	/^    void setMove(int move) {$/;"	f	class:SlimRectangle
+setMove	SlimmerRectangle.h	/^    void setMove(int move) {$/;"	f	class:SlimmerRectangle
+setNodeColumns	RoadMap.cpp	/^void RoadMap::setNodeColumns() {$/;"	f	class:RoadMap
+setNodeRows	RoadMap.cpp	/^void RoadMap::setNodeRows() {$/;"	f	class:RoadMap
+setNrLocations	Rectangle.h	/^    void setNrLocations(int area) {$/;"	f	class:Rectangle
+setObstacle	GridMap.h	/^    void setObstacle (int col, int row, bool flag) {$/;"	f	class:GridMap
+setRow	GridNode.h	/^    void setRow(int row) {$/;"	f	class:GridNode
+setRow	RoadMapNode.h	/^    void setRow(int r) {$/;"	f	class:RoadMapNode
+should_mark_as_parent	MoveTable.cpp	/^bool MoveTable::should_mark_as_parent(const AbstractGraph *graph,$/;"	f	class:MoveTable
+shrinkTo1x1	TableCompresser1.cpp	/^Rectangle TableCompresser1::shrinkTo1x1(const Rectangle & r, $/;"	f	class:TableCompresser1
+skip_rectangle	TableCompresser1.cpp	/^bool TableCompresser1::skip_rectangle(int position_in_list, int list_size, int nr_locations) const {$/;"	f	class:TableCompresser1
+split	QuadTree.cpp	/^void QuadTree::split(const MoveTable & mt, const AbstractGraph * graph,$/;"	f	class:QuadTree
+split	RectangleSplitter.cpp	/^void RectangleSplitter::split(Rectangle & rec, const MoveTable & mt,$/;"	f	class:RectangleSplitter
+splitHorizontally	RectangleSplitter.cpp	/^void RectangleSplitter::splitHorizontally(Rectangle & rec,$/;"	f	class:RectangleSplitter
+splitVertically	RectangleSplitter.cpp	/^void RectangleSplitter::splitVertically(Rectangle & rec,$/;"	f	class:RectangleSplitter
+st	CPD2.h	/^    FastStack st[5];$/;"	m	class:CPD2
+start_col	Scenario.h	/^    int start_col;$/;"	m	struct:Record
+start_idx	ScenarioRM.h	/^    int start_idx;$/;"	m	struct:RecordRM
+start_row	Scenario.h	/^    int start_row;$/;"	m	struct:Record
+string_id	RoadMapNode.h	/^    string string_id;$/;"	m	class:RoadMapNode
+table	ReachabilityTable.h	/^    vector< vector<bool> > table;$/;"	m	class:ReachabilityTable
+tables2	CompressedMoveDatabase.h	/^    vector<CompressedTable> tables2;$/;"	m	class:CompressedMoveDatabase
+target_col	Scenario.h	/^    int target_col;$/;"	m	struct:Record
+target_idx	ScenarioRM.h	/^    int target_idx;$/;"	m	struct:RecordRM
+target_row	Scenario.h	/^    int target_row;$/;"	m	struct:Record
+tarjan	ReachabilityTable.cpp	/^void ReachabilityTable::tarjan(AbstractGraphNode *pn,$/;"	f	class:ReachabilityTable
+time	GridEdge.h	/^    double time;$/;"	m	class:GridEdge
+time	RoadMapEdge.h	/^    double time;$/;"	m	class:RoadMapEdge
+top	CPD2.h	/^        inline StackElement & top() {$/;"	f	struct:CPD2::FastStack
+topidx	CPD2.h	/^        int topidx;$/;"	m	struct:CPD2::FastStack
+type0_atoms_read	CPD2.h	/^    int type0_atoms_read[5];$/;"	m	class:CPD2
+upper_row	SlimRectangle.h	/^    int upper_row;$/;"	m	class:SlimRectangle
+width	RoadMap.h	/^    int width;$/;"	m	class:RoadMap
+writeDataToStream	CompressedMoveDatabase.cpp	/^void CompressedMoveDatabase::writeDataToStream(ofstream & outfile) const {$/;"	f	class:CompressedMoveDatabase
+writeDataToStream	CompressedTable.cpp	/^void CompressedTable::writeDataToStream(ofstream & outfile) const {$/;"	f	class:CompressedTable
+writeDataToStream	Rectangle.cpp	/^void Rectangle::writeDataToStream(ofstream & outfile) const {$/;"	f	class:Rectangle
+writeDataToStream	SlimRectangle.cpp	/^void SlimRectangle::writeDataToStream(ofstream & outfile) const {$/;"	f	class:SlimRectangle
+writeDataToStream	SlimmerRectangle.cpp	/^void SlimmerRectangle::writeDataToStream(ofstream & outfile) const {$/;"	f	class:SlimmerRectangle
+writeToFile	ReachabilityTable.cpp	/^bool ReachabilityTable::writeToFile(const string & filename) const {$/;"	f	class:ReachabilityTable
+x	RoadMapNode.h	/^    double x;$/;"	m	class:RoadMapNode
+y	RoadMapNode.h	/^    double y;$/;"	m	class:RoadMapNode
+~AbstractCPD	AbstractCPD.cpp	/^AbstractCPD::~AbstractCPD() {$/;"	f	class:AbstractCPD
+~AbstractGraphEdge	AbstractGraphEdge.cpp	/^AbstractGraphEdge::~AbstractGraphEdge() {$/;"	f	class:AbstractGraphEdge
+~AbstractGraphNode	AbstractGraphNode.cpp	/^AbstractGraphNode::~AbstractGraphNode() {$/;"	f	class:AbstractGraphNode
+~CPD2	CPD2.cpp	/^CPD2::~CPD2() {$/;"	f	class:CPD2
+~CompressedMoveDatabase	CompressedMoveDatabase.cpp	/^CompressedMoveDatabase::~CompressedMoveDatabase() {$/;"	f	class:CompressedMoveDatabase
+~CompressedTable	CompressedTable.cpp	/^CompressedTable::~CompressedTable() {$/;"	f	class:CompressedTable
+~GridEdge	GridEdge.cpp	/^GridEdge::~GridEdge() {$/;"	f	class:GridEdge
+~GridMap	GridMap.cpp	/^GridMap::~GridMap() {$/;"	f	class:GridMap
+~GridNode	GridNode.cpp	/^GridNode::~GridNode() {$/;"	f	class:GridNode
+~MoveTable	MoveTable.cpp	/^MoveTable::~MoveTable() {$/;"	f	class:MoveTable
+~ParamManager	ParamManager.cpp	/^ParamManager::~ParamManager() {$/;"	f	class:ParamManager
+~QTDatabase	QTDatabase.cpp	/^QTDatabase::~QTDatabase() {$/;"	f	class:QTDatabase
+~QuadTree	QuadTree.cpp	/^QuadTree::~QuadTree() {$/;"	f	class:QuadTree
+~ReachabilityTable	ReachabilityTable.cpp	/^ReachabilityTable::~ReachabilityTable() {$/;"	f	class:ReachabilityTable
+~Rectangle	Rectangle.cpp	/^Rectangle::~Rectangle() {$/;"	f	class:Rectangle
+~RectangleSplitter	RectangleSplitter.cpp	/^RectangleSplitter::~RectangleSplitter() {$/;"	f	class:RectangleSplitter
+~RoadMap	RoadMap.cpp	/^RoadMap::~RoadMap() {$/;"	f	class:RoadMap
+~RoadMapEdge	RoadMapEdge.cpp	/^RoadMapEdge::~RoadMapEdge() {$/;"	f	class:RoadMapEdge
+~RoadMapNode	RoadMapNode.cpp	/^RoadMapNode::~RoadMapNode() {$/;"	f	class:RoadMapNode
+~Scenario	Scenario.cpp	/^Scenario::~Scenario() {$/;"	f	class:Scenario
+~ScenarioRM	ScenarioRM.cpp	/^ScenarioRM::~ScenarioRM() {$/;"	f	class:ScenarioRM
+~SlimRectangle	SlimRectangle.cpp	/^SlimRectangle::~SlimRectangle() {$/;"	f	class:SlimRectangle
+~SlimmerRectangle	SlimmerRectangle.cpp	/^SlimmerRectangle::~SlimmerRectangle() {$/;"	f	class:SlimmerRectangle
+~SubstringManager	SubstringManager.cpp	/^SubstringManager::~SubstringManager() {$/;"	f	class:SubstringManager
+~TableCompresser	TableCompresser.cpp	/^TableCompresser::~TableCompresser() {$/;"	f	class:TableCompresser
+~TableCompresser1	TableCompresser1.cpp	/^TableCompresser1::~TableCompresser1() {$/;"	f	class:TableCompresser1
+~TableCompresser2	TableCompresser2.cpp	/^TableCompresser2::~TableCompresser2() {$/;"	f	class:TableCompresser2
+~Tile	Tile.cpp	/^Tile::~Tile() {$/;"	f	class:Tile

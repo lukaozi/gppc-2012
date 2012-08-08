@@ -1,0 +1,201 @@
+/* 
+ * File:   GridMap.cpp
+ * Author: Abotea
+ * 
+ * Created on April 12, 2010, 4:27 PM
+ */
+
+#include "GridMap.h"
+#include "GridNode.h"
+#include "GridEdge.h"
+#include <iostream>
+#include <fstream>
+#include <limits>
+
+GridMap::GridMap() {
+}
+
+GridMap::GridMap(const GridMap& orig) {
+    assert (false);
+}
+
+GridMap::~GridMap() {
+    for (vector<AbstractGraphNode*>::iterator it = nodes.begin(); it != nodes.end(); it++)
+        delete *it;
+}
+
+GridMap::GridMap(const string & filename) {
+    string token;
+    ifstream infile;
+    cerr << "Opening input file " << filename.c_str() << endl;
+    infile.open(filename.c_str());
+    if (!infile) {
+        cerr << "Unable to open " << filename << endl;
+        exit (1);
+    }
+    infile >> token; // read keyword "type"
+    //cerr << token << endl;
+    assert (token == "type");
+    infile >> token;
+    if (token == "octile") {
+        this->map_type = OCTILE;
+    } else if (token == "tile") {
+        this->map_type = TILE;
+    } else {
+        this->map_type = UNKNOWN;
+    }
+    infile >> token;
+    assert (token == "height");
+    infile >> this->nr_rows;
+    infile >> token;
+    assert (token == "width");
+    infile >> this->nr_cols;
+    infile >> token;
+    assert (token == "map");
+    nr_traversable_tiles = 0;
+    node_indexing_per_columns.resize(this->nr_cols);
+    node_indexing_per_rows.resize(this->nr_rows);
+    for (int i = 0; i < this->nr_cols; i++) {
+        vector<int> tmp;
+        tmp.resize(this->nr_rows);
+        node_indexes.push_back(tmp);
+    }
+    for (int r = 0; r < this->nr_rows; r++) {
+        infile >> token;
+        for (unsigned int c = 0; c < token.length(); c++) {
+            assert (token[c] == TRAVERSABLE or token[c] == BLOCKED);
+            if (token[c] == TRAVERSABLE) {
+                setObstacle(c, r, false);
+                nr_traversable_tiles++;
+                int idx = getIdx(c, r);
+                AbstractGraphNode * pn = new GridNode(idx, c, r);
+                nodes.push_back(pn);
+                node_indexing_per_columns[c].push_back(idx);
+                node_indexing_per_rows[r].push_back(idx);
+                node_indexes[c][r] = idx;
+            } else {
+                setObstacle(c, r, true);
+                nodes.push_back(NULL);
+                node_indexes[c][r] = -1;
+            }
+            //cerr << token[c];
+        }
+        //cerr << endl;
+    }
+    infile.close();
+    this->createEdges();
+}
+
+int GridMap::cost(const Tile & t1, const  Tile & t2) const {
+    if (isObstacle(t1.col, t1.row) || isObstacle(t2.col, t2.row))
+        return std::numeric_limits<int>::max();
+    if (abs(t1.col - t2.col) > 1)
+        assert (false);
+    if (abs(t1.row - t2.row) > 1)
+        assert (false);
+    if (abs(t1.row - t2.row) + abs(t1.col - t2.col) == 2)
+        return DIAGDISTANCE;
+    if (abs(t1.row - t2.row) + abs(t1.col - t2.col) == 1)
+        return STRAIGHTDISTANCE;
+    if (abs(t1.row - t2.row) + abs(t1.col - t2.col) == 0)
+        return 0;
+    assert (false);
+    return std::numeric_limits<int>::max();
+}
+
+int GridMap::getMove(const Tile & orig, const Tile & dest) const {
+    if (orig.col == dest.col && orig.row - 1 == dest.row)
+        return NORTH;
+    if (orig.col + 1 == dest.col && orig.row - 1 == dest.row)
+        return NORTHEAST;
+    if (orig.col + 1 == dest.col && orig.row == dest.row)
+        return EAST;
+    if (orig.col + 1 == dest.col && orig.row + 1 == dest.row)
+        return SOUTHEAST;
+    if (orig.col == dest.col && orig.row + 1 == dest.row)
+        return SOUTH;
+    if (orig.col - 1 == dest.col && orig.row + 1 == dest.row)
+        return SOUTHWEST;
+    if (orig.col - 1 == dest.col && orig.row == dest.row)
+        return WEST;
+    if (orig.col - 1 == dest.col && orig.row - 1 == dest.row)
+        return NORTHWEST;
+    assert(false);
+}
+
+vector<int> GridMap::getNeighbors(int id) const {
+    vector<int> result;
+    Tile tile(id%nr_cols, id/nr_cols, id);
+    for (int c = -1; c <= 1; c++) {
+        if (tile.col + c < 0 || tile.col + c > nr_cols)
+            continue;
+        for (int r = -1; r <= 1; r++) {
+            if (tile.row + r < 0 || tile.row + r > nr_rows)
+                continue;
+            if (c == 0 && r == 0)
+                continue;
+            if (isObstacle(tile.col + c, tile.row + r))
+                continue;
+            // also skip diagonals that go between two obstacles like this:
+            // ......
+            // ..A@..
+            // ..@B..
+            // ......
+            
+            // So... if the two tiles are diagonally from each other...
+            if (c != 0 && r != 0) {
+                // and the two other tiles are blocked...
+                if (isObstacle(tile.col + c, tile.row) && isObstacle(tile.col, tile.row + r))
+                    // skip this case
+                    continue;
+            }
+            Tile t(tile.col + c, tile.row + r, getIdx(tile.col + c, tile.row + r));
+            result.push_back(t.id);
+        }
+    }
+    return result;
+}
+
+void GridMap::createEdges() {
+    for (int index = 0; index < nodes.size(); index++) {
+        if (nodes[index] != NULL)
+            createEdges(index);
+    }
+}
+
+void GridMap::createEdges(int id) {
+    double cost;
+    Tile tile(id%nr_cols, id/nr_cols, id);
+    for (int c = -1; c <= 1; c++) {
+        if (tile.col + c < 0 || tile.col + c >= nr_cols)
+            continue;
+        for (int r = -1; r <= 1; r++) {
+            if (tile.row + r < 0 || tile.row + r >= nr_rows)
+                continue;
+            if (c == 0 && r == 0)
+                continue;
+            if (isObstacle(tile.col + c, tile.row + r))
+                continue;
+            // also skip diagonals that go between two obstacles like this:
+            // ......
+            // ..A@..
+            // ..@B..
+            // ......
+
+            // So... if the two tiles are diagonally from each other...
+            if (c != 0 && r != 0) {
+                // and the two other tiles are blocked...
+                if (isObstacle(tile.col + c, tile.row) && isObstacle(tile.col, tile.row + r))
+                    // skip this case
+                    continue;
+            }
+            if (c != 0 && r != 0) {
+                cost = DIAGDISTANCE;
+            } else
+                cost = STRAIGHTDISTANCE;
+            int nid = getIdx(tile.col + c, tile.row + r);
+            AbstractGraphEdge * pe = new GridEdge(id, nid, cost, cost, NOID);
+            nodes[id]->addEdge(pe);
+        }
+    }
+}

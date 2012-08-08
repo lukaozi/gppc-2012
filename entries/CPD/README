@@ -1,0 +1,17 @@
+
+This is the source code of the programs to use in the 2012 Pathfinding Competition.
+The makefile is set to build two versions of the program:
+-- cpd-comp-20m constructs a path in two stages: first add the 20 steps, and then the rest of the path.
+-- cpd-comp-mbm constructs a path adding one move at a time (mbm stands for move by move).
+
+The executables are located in dist/Release-20m/GNU-Linux-x86/ and dist/Release-mbm/GNU-Linux-x86 respectively.
+Should there be a need to re-build them, run "rm -rf build dist" and then "make all" in the main directory.
+
+The programs perform the preprocessing identically. It is sufficient to run the preprocessing only once.
+To make sure that both programs can use the same preprocessed files (without having to rename and have duplicate copies of the files),
+both programs return the same team name (CPD).
+
+The only arguments in the command line are those coming from the competition API: -pre, -run, and -full.
+
+Please direct any questions to Adi Botea abotea@yahoo.com
+

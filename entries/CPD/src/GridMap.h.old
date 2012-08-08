@@ -1,0 +1,109 @@
+/* 
+ * File:   GridMap.h
+ * Author: Abotea
+ *
+ * Created on April 12, 2010, 4:27 PM
+ */
+
+#ifndef _GRIDMAP_H
+#define	_GRIDMAP_H
+
+#include "globals.h"
+#include <stdlib.h>
+#include <string>
+#include <vector>
+#include <assert.h>
+#include "Tile.h"
+#include "AbstractGraph.h"
+
+using namespace std;
+
+class GridMap : public AbstractGraph {
+public:
+    GridMap();
+    GridMap(const GridMap& orig);
+    GridMap(const string & filename);
+    virtual ~GridMap();
+    int cost(const Tile & t1, const Tile & t2) const;
+    int getMove(const Tile & orig, const Tile & dest) const;
+    vector<int> getNeighbors(int id) const;
+    int getWidth() const {
+        return nr_cols;
+    }
+    int getHeight() const {
+        return nr_rows;
+    }
+    int getNrNodes() const {
+        //return nr_traversable_tiles;
+        return nodes.size();
+    }
+    AbstractGraphNode * getNode(unsigned int idx) const {
+        //cerr << "idx = " << idx << "; nodes size = " << nodes.size() << endl;
+        assert (0 <= idx && idx < nodes.size());
+        return nodes[idx];
+    }
+    const vector<AbstractGraphNode*> & getNodes() const {
+        return nodes;
+    }
+    const vector<int> & getNodeIndexesOnColumn(unsigned int c) const {
+        assert (0 <= c && c <= this->nr_cols);
+        return node_indexing_per_columns[c];
+    };
+    const vector<int> & getNodeIndexesOnRow(unsigned int r) const {
+        assert (0 <= r && r <= this->nr_rows);
+        return this->node_indexing_per_rows[r];
+    };
+    bool isObstacle(int col, int row) const {
+        assert (0 <= col && col <= MAX_WIDTH);
+        assert (0 <= row && row <= MAX_HEIGHT);
+        return obstacles[col][row];
+    }
+    AbstractGraphNode * getNode(unsigned int col, unsigned int row) const {
+        assert (0 <= col && col < this->nr_cols);
+        assert (0 <= row && row < this->nr_rows);
+        if (isObstacle(col, row))
+            return NULL;
+        return nodes[node_indexes[col][row]];
+    }
+    int calculateDefaultMove(const AbstractGraphNode *origin, const AbstractGraphNode *dest) const {
+        assert (false);
+        return -1;
+    }
+    vector<bool> getBitMap() const {
+        assert (false);
+        vector<bool> result;
+        return result;
+    }
+
+private:
+    // methods
+    void setObstacle (int col, int row, bool flag) {
+        assert (0 <= col && col <= MAX_WIDTH);
+        assert (0 <= row && row <= MAX_HEIGHT);
+        obstacles[col][row] = flag;
+    }
+    int getIdx(int c, int r) const {
+        return r * nr_cols + c;
+    }
+    void createEdges();
+    void createEdges(int nodeIdx);
+    // consts
+    enum MAPTYPES {TILE, OCTILE, UNKNOWN};
+    static const char TRAVERSABLE = '.';
+    static const char BLOCKED = '@';
+    // data members
+    bool obstacles[MAX_WIDTH][MAX_HEIGHT];
+    int nr_cols;
+    int nr_rows;
+    int nr_traversable_tiles;
+    MAPTYPES map_type;
+    // data members
+    vector<AbstractGraphNode*> nodes;
+    vector<vector<int> > node_indexing_per_columns;
+    vector<vector<int> > node_indexing_per_rows;
+    vector<vector<int> > node_indexes;
+
+};
+
+#endif	/* _GRIDMAP_H */
+
