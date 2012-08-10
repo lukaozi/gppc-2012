@@ -353,54 +353,6 @@ void CreateTree(xyLoc loc)
 	}
 }
 
-// Attempt to center the tree root at the middle of the map.
-// Expand outwards in a 'spiral' until a valid loc is found.
-xyLoc PickTreeRoot()
-{
-	xyLoc boxCorner;
-	int boxWidth = 1;
-	int boxHeight = 1;
-	boxCorner.x = width/2;
-	boxCorner.y = height/2;
-
-	while( true )
-	{
-		xyLoc loc;
-		for(int i=0; i<boxWidth; i++)
-		{
-			loc = boxCorner;
-			loc.x = boxCorner.x+i;
-			if( map[ GetIndex(loc) ] == true )
-				return loc;
-			loc.y = boxCorner.y+boxHeight;
-			if( map[ GetIndex(loc) ] == true )
-				return loc;
-		}
-		for(int i=0; i<boxHeight; i++)
-		{
-			loc = boxCorner;
-			loc.y = boxCorner.y+i;
-			if( map[ GetIndex(loc) ] == true )
-				return loc;
-			loc.x = boxCorner.x+boxWidth;
-			if( map[ GetIndex(loc) ] == true )
-				return loc;
-		}
-
-		if( boxHeight == height && boxWidth == width )
-		{
-			loc.x = -1;
-			loc.y = -1;
-			return loc;
-		}
-
-		if( boxWidth < width )
-			boxWidth++;
-		if( boxHeight < height )
-			boxHeight++;
-	}
-}
-
 /////////////// Public functions //////////////////
 
 const char *GetName()
@@ -430,9 +382,17 @@ void PreprocessMap(std::vector<bool> &bits, int w, int h, const char *filename)
 		costI[i]      = (unsigned char)255;
 	}
 
-	// Create Tree
-	xyLoc loc = PickTreeRoot();
-	CreateTree( loc );
+	// Create Trees (multiple roots possible)
+	for( int x=0; x<width; x++) {
+		for( int y=0; y<height; y++) {
+			xyLoc loc = {x,y};
+			int index = GetIndex(loc);
+			if( map[index]==true && visited[index]==false )
+			{
+				CreateTree(loc);
+			}
+		}
+	}		
 
 	// Compact
 	for( unsigned int i=0; i<size; i++ )
