@@ -1,0 +1,5 @@
+#!/bin/tcsh
+
+echo memory-before memory-after time-all time-max time-first avg-len subopt
+echo `cat ${1}* | grep before | cut -d "B" -f 2 | cut -d "-" -f 1 | sed 's/ //g' | awk 'BEGIN {} { sum += $1 ; cnt++; } END { print sum/cnt }'` `cat ${1}* | grep after | cut -d "B" -f 2 | cut -d "-" -f 1 | sed 's/ //g' | awk 'BEGIN {} { sum += $1 ; cnt++; } END { print sum/cnt }'` `cat ${1}* | grep -v invalid | grep GPPC | grep total-time | cut -f 4,6,8,10,12 | awk 'BEGIN {} { sum1 += $1;  sum2 += $2; sum3 += $3 ; sum4 += $4; sum5 += $5 ; cnt++; } END { print sum1/cnt " " sum2/cnt " " sum3/cnt " " sum4/cnt " " sum5/cnt }'`
+echo `cat ${1}* | grep before | cut -d "B" -f 2 | cut -d "-" -f 1 | sed 's/ //g' | awk 'BEGIN {} { sum += $1 ; cnt++; } END { print sum/cnt }'` `cat ${1}* | grep after | cut -d "B" -f 2 | cut -d "-" -f 1 | sed 's/ //g' | awk 'BEGIN {} { sum += $1 ; cnt++; } END { print sum/cnt }'` `cat ${1}* | grep GPPC | grep total-time | cut -f 4,6,8,10,12 | awk 'BEGIN {} { sum1 += $1;  sum2 += $2; sum3 += $3 ; sum4 += $4; sum5 += $5 ; cnt++; } END { print sum1/cnt " " sum2/cnt " " sum3/cnt " " sum4/cnt " " sum5/cnt }'`
