@@ -25,15 +25,20 @@ int real_distance;
 
 bool sort_area_by_left (map_area f, map_area k);
 int GetIndex(xyLoc s);
+double getAbsDistance(xyLoc s, xyLoc g);
 void ExtractPath(xyLoc end, std::vector<xyLoc> &finalPath);
-void ExtractPath(node end, std::vector<xyLoc> &finalPath);
-bool sort_nodes_by_distance(node f, node l) { return f.total_distance > l.total_distance; }
+void ExtractPath(xyLoc goal, node end, std::vector<xyLoc> &finalPath);
 bool sort_nodes_by_id(node f, node l) { return f.id < l.id; }
 
 
 void SetFirstSearch(bool status)
 {
 	first_search = status;
+}
+
+void InitializeSearch()
+{
+	p_nodes = final_nodes;
 }
 
 const char *GetName()
@@ -60,8 +65,8 @@ bool GetPath(void *data, xyLoc s, xyLoc g, std::vector<xyLoc> &path)
 	{
 		first_search = false;
 
-		// Make a copy of nodes (in order to keep the original intact)
-		p_nodes = final_nodes;
+		// Initialize and clear variables to start searching.
+		InitializeSearch();
 
 		// Check for nodes
 		if (p_nodes.size() == 0)
@@ -70,24 +75,43 @@ bool GetPath(void *data, xyLoc s, xyLoc g, std::vector<xyLoc> &path)
 			return true;
 		}
 
+		// Try to go directly from start to finish
+		bool dn = get_str_path(map, s, g, path, real_distance);
+		if (dn)
+			return true;
+		// Try to go in reverse directly
+		bool dn1 = get_str_path(map, g, s, path, real_distance);
+		if (dn1)
+		{
+			std::reverse(path.begin(), path.end());
+			return true;
+		}
+		// There is no direct path, continue searching
+		// Clear path
+		path.clear();
+
 		// Get areas containing start and goal positions
 		int s_area, g_area;
 		s_area = g_area = -1;
+
 		for (unsigned i=0; i<final_areas.size(); i++)
 		{
-			if (final_areas[i].contains(s))
+			if (s_area == -1 && final_areas[i].contains(s))
 				s_area = final_areas[i].id;
-			if (final_areas[i].contains(g))
+			if (g_area == -1 && final_areas[i].contains(g))
 				g_area = final_areas[i].id;
 
 			if (s_area != -1 && g_area != -1)
 				break;
 		}
 
+		// If a point is not valid or not found, stop the search
+		if (s_area == -1 || g_area == -1)
+			return true;
+
 		//_____ Create node for start position
-		int node_counter = p_nodes.size();
 		node s_node;
-		s_node.id = node_counter;
+		s_node.id = p_nodes.size()-2;
 		s_node.parent = -1;
 		s_node.visited = true;
 
@@ -103,13 +127,13 @@ bool GetPath(void *data, xyLoc s, xyLoc g, std::vector<xyLoc> &path)
 		t1.position.x = s.x;
 		s_node.items.push_back(t1);
 		s_node.areas.push_back(s_area);
-		p_nodes.push_back(s_node);
-		node_counter++;
+		p_nodes[p_nodes.size()-2] = s_node;
 
 		//_____ Create node for goal position
 		node g_node;
-		g_node.id = node_counter;
+		g_node.id = p_nodes.size()-1;
 		g_node.parent = -1;
+		g_node.temp = true;
 
 		node_item t2;
 		t2.area = g_area;
@@ -123,79 +147,69 @@ bool GetPath(void *data, xyLoc s, xyLoc g, std::vector<xyLoc> &path)
 		t2.position.x = g.x;
 		g_node.items.push_back(t2);
 		g_node.areas.push_back(g_area);
-		p_nodes.push_back(g_node);
-		node_counter++;
+		p_nodes[p_nodes.size()-1] = g_node;
 
 		// Check if there is a straight path between start and goal first (if nodes are in the same area)
 		if (s_area == g_area)
 		{
-			get_str_path(map, s_node.items[0].position, g_node.items[0].position, path, real_distance);
+			get_str_path(map, s_node.items[0].position, g_node.items[0].position, final_areas[s_area], path, real_distance);
 			return true;
-		}
-		else
-		{
-			// Try to go directly
-			bool dn = get_str_path(map, s_node.items[0].position, g_node.items[0].position, path, real_distance);
-			if (dn)
-				return true;
-			// Try to go in reverse directly
-			bool dn1 = get_str_path(map, g_node.items[0].position, s_node.items[0].position, path, real_distance);
-			if (dn1)
-			{
-				std::reverse(path.begin(), path.end());
-				return true;
-			}
-			path.clear();
 		}
 
 		// Create children of start point-node
-		for (unsigned i=0; i<p_nodes.size()-1; i++)
+		for (unsigned i=0; i<final_areas[s_area].nodes.size(); i++)
 		{
-			node temp = p_nodes[i];
-			bool match = (s_area == temp.areas[0] || s_area == temp.areas[1]);
-			if (s_node.id != temp.id && match)
+			node temp = p_nodes[final_areas[s_area].nodes[i]];
+			bool ch_match = (s_area == temp.areas[0] || s_area == temp.areas[1]);
+			if (s_node.id != temp.id && ch_match)
 			{
 				xyLoc end = ((s_area == temp.areas[0]) ? temp.items[0].position : temp.items[1].position);
 				std::vector<xyLoc> mhPath;
-				get_str_path(map, s, end, final_areas[s_area], mhPath, real_distance);
-				temp.distance = real_distance;
+				temp.distance = getAbsDistance(s,end);
+				temp.temp = true;
 				s_node.children.push_back(temp);
 			}
 		}
-
 		// Create parents of goal point-node
-		for (unsigned i=0; i<p_nodes.size()-1; i++)
+		for (unsigned i=0; i<final_areas[g_area].nodes.size(); i++)
 		{
-			node temp = p_nodes[i];
+			node temp = p_nodes[final_areas[g_area].nodes[i]];
 			bool match = (g_area == temp.areas[0] || g_area == temp.areas[1]);
 			if (match)
 			{
 				xyLoc end = ((s_area == temp.areas[0]) ? temp.items[0].position : temp.items[1].position);
 				std::vector<xyLoc> mhPath;
-				get_str_path(map, s, end, final_areas[g_area], mhPath, real_distance);
-				temp.distance = real_distance;
-				p_nodes[i].children.push_back(g_node);
+				temp.distance = getAbsDistance(s,end);
+				p_nodes[temp.id].children.push_back(g_node);
 			}
 		}
-		// Set current node -> start node
+
 		current = s_node;
 	}
-	// Search if goal is in the front
+
+	int min = 500000;
+	int indx;
+	// Search if goal is in the front and get minimum distance in the meantime
 	for (unsigned i=0; i<succ.size(); i++)
+	{
 		if ((g.x == succ[i].items[0].position.x && g.y == succ[i].items[0].position.y) || (g.x == succ[i].items[1].position.x && g.y == succ[i].items[1].position.y))
 		{
-			ExtractPath(succ[i], path);
+			ExtractPath(g, succ[i], path);
 			return true;
 		}
-
-	// If there are nodes in the front, choose the next node
+		// Get minimum distance in order to choose the next node later
+		if (succ[i].total_distance < min)
+		{
+			min = succ[i].total_distance;
+			indx = i;
+		}
+	}
+	// If there are nodes in the front, choose the next node (the index is given above)
 	if (succ.size() > 0)
 	{
-		//_____ Sort nodes by distance (score of each node including heuristic value)
-		sort(succ.begin(), succ.end(), sort_nodes_by_distance);
-		current = succ.back();
+		current = succ[indx];
 		p_nodes[current.id].visited = true;
-		succ.pop_back();
+		succ.erase(succ.begin() + indx);
 	}
 
 	// Create successors
@@ -206,6 +220,12 @@ bool GetPath(void *data, xyLoc s, xyLoc g, std::vector<xyLoc> &path)
 		return true;
 
 	return false;
+}
+
+double getAbsDistance(xyLoc s, xyLoc g)
+{
+	double sqr2 = sqrt(2)-1;
+	return (abs(s.x - g.x) > abs(s.y - g.y) ? abs(s.x - g.x) + abs(s.y - g.y)*sqr2 : abs(s.y - g.y) + abs(s.x - g.x)*sqr2);
 }
 
 int GetIndex(xyLoc s)
@@ -255,19 +275,6 @@ void GetSuccessors(node s, xyLoc g, std::vector<node> &cfront)
 			cfront[pos].parent = s.id;
 			p_nodes[cfront[pos].id].parent = s.id;
 		}
-		else if (p_nodes[k.id].visited && ((s.total_distance + k.distance + dtg) < p_nodes[k.id].total_distance))
-		{
-			/*
-			 * If node is already visited but score was greater before,
-			 * recalculate score and insert it into the front.
-			 *
-			 */
-			int f_id = k.id;
-			p_nodes[k.id].total_distance = s.total_distance + k.distance + dtg;
-			p_nodes[f_id].depth = s.depth + 1;
-			p_nodes[f_id].parent = s.id;
-			cfront.push_back(p_nodes[f_id]);
-		}
 	}
 }
 
@@ -276,13 +283,30 @@ void GetSuccessors(node s, xyLoc g, std::vector<node> &cfront)
  * and going in reverse.
  *
  */
-void ExtractPath(node end, std::vector<xyLoc> &finalPath)
+void ExtractPath(xyLoc goal, node end, std::vector<xyLoc> &finalPath)
 {
+	//printf("extracting path...\n");
 	node current = end;
+	std::vector<xyLoc> path;
+	// Get the goal area
+	int goal_area = (current.items[0].position.x == goal.x && current.items[0].position.y == goal.y ? current.areas[0] : current.areas[1]);
+	// Make path from one node_item to another if node_item is on different area
+	int start_count_area = ((current.areas[0] == p_nodes[current.parent].areas[0] || current.areas[0] == p_nodes[current.parent].areas[1]) ? current.areas[0] : current.areas[1]);
+	if (start_count_area != goal_area)
+	{
+		// Get the end position of the path
+		int end_position = ((current.areas[0] == p_nodes[current.parent].areas[0] || current.areas[0] == p_nodes[current.parent].areas[1]) ? 0 : 1);
+		get_str_path(map, goal, current.items[end_position].position, path, real_distance);
+		// Add path to finalPath
+		for (unsigned i=0; i<path.size(); i++)
+			finalPath.push_back(path[i]);
+	}
+
 	while (current.parent != -1)
 	{
+		//printf("inside extract while...\n");
 		node next = p_nodes[current.parent];
-		std::vector<xyLoc> path;
+		//printf("areas: [%d,%d], (%d,%d)\n",current.areas[0],current.areas[1],next.areas[0],next.areas[1]);
 		if (current.areas[0] == next.areas[0] || current.areas[0] == next.areas[1])
 		{
 			xyLoc s,g;
@@ -317,12 +341,8 @@ void ExtractPath(node end, std::vector<xyLoc> &finalPath)
 			finalPath.push_back(path[i]);
 		current = next;
 	}
-
-	// Remove last element because is the start
-	finalPath.pop_back();
+	// Reverse path because it's been extracted from the goal to start
 	std::reverse(finalPath.begin(), finalPath.end());
-	// Insert end position because is not included in the path
-	finalPath.push_back(end.items[0].position);
 }
 
 void ExtractPath(xyLoc end, std::vector<xyLoc> &finalPath)
@@ -433,6 +453,9 @@ void *PrepareForSearch(std::vector<bool> &bits, int w, int h, const char *filena
 			final_nodes.push_back(current);
 		}
 	}
+
+	// Resize final_nodes in order to include starting and goal nodes
+	final_nodes.resize(final_nodes.size() + 2);
 
 	printf("Preparation finished...\n");
 	printf("Number of areas: %d\n", final_areas.size());
@@ -1233,8 +1256,10 @@ void PreprocessMap(std::vector<bool> &bits, int w, int h, const char *filename)
 			final_nodes.push_back(final);
 	}
 	sort(final_nodes.begin(), final_nodes.end(), sort_nodes_by_id);
+	// Resize final_nodes in order to insert starting and goal nodes
 	printf("Graph successfully created!\n");
 	export_map(final_areas, final_nodes, filename);
+	final_nodes.resize(final_nodes.size() + 2);
 	printf("Pre-processing OK!\n");
 }
 
@@ -1277,6 +1302,7 @@ node::node()
 	this->total_distance = 0;
 	this->parent = -1;
 	this->visited = false;
+	this->temp = false;
 	this->depth = 0;
 }
 
@@ -1554,4 +1580,3 @@ void write_path(std::vector<string> &tempMap, int width, int height, std::vector
 	for (unsigned i=0; i<path.size(); i++)
 		tempMap[path[i].y*width+path[i].x] = "*";
 }
-

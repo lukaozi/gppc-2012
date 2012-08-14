@@ -20,9 +20,9 @@ public:
 class node{
 public:
 	node();
-	int id, depth, parent, distance;
-	double total_distance;
-	bool visited;
+	int id, depth, parent;
+	double total_distance, distance;
+	bool visited, temp;
 	std::vector<int> areas;
 	std::vector<node_item> items;
 	std::vector<node> children;
@@ -39,6 +39,7 @@ public:
 	int id, last_left, last_right, blast_left, blast_right, last_width, start_row, row_count;
 	bool to_close, open_left, close_left, open_right, close_right;
 	std::vector<int> start_points, end_points, nodes;
+	std::vector<xyLoc> internalNodePoints;
 };
 class row_slice
 {
@@ -66,6 +67,7 @@ void GetSuccessors(node s, xyLoc g, std::vector<node> &neighbors);
 
 // Personal Functions
 void SetFirstSearch(bool status);
+void InitializeSearch();
 bool get_str_path(std::vector<bool> map, xyLoc start, xyLoc end, std::vector<xyLoc> &path, int &r_distance);
 bool get_str_path(std::vector<bool> map, xyLoc start, xyLoc end, map_area area, std::vector<xyLoc> &path, int &r_distance);
 void export_map(std::vector<map_area> areas, std::vector<node> nodes, const char* filename);
