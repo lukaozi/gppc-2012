@@ -122,7 +122,9 @@ int main(int argc, char **argv)
 	void *reference = PrepareForSearch(mapData, width, height, filename);
 
 	printf("GPPC: Memory before: "); fflush(stdout);
-	system("../getmem");
+	char argument[50];
+	sprintf(argument, "pmap -x %d | tail -n 1", getpid());
+	system(argument);
 	ScenarioLoader scen(argv[3]);
 
 	Timer t;
@@ -171,7 +173,7 @@ int main(int argc, char **argv)
 		}
 	}
 	printf("GPPC: Memory after: ");fflush(stdout);
-	system("../getmem");
+	system("argument");
 
 	return 0;
 }
